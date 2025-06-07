@@ -46,3 +46,7 @@ pytest_cache/
 
 # Local config
 config.yaml
+
+#do not send
+*.pt
+
