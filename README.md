@@ -28,6 +28,5 @@
 * `utils/`: Utility functions and helper scripts.
 * `config.yaml`: Main configuration file.
 * `conda_environment.txt`: Conda environment specification.
-* `requirements.txt`: Python dependencies.
 * `pyproject.toml`: Project metadata and build configuration.
 
