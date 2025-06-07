@@ -16,7 +16,6 @@
 ├── tests/
 ├── utils/
 ├── pyproject.toml
-├── requirements.txt
 ├── README.md
 ```
 
