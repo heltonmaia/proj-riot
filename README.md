@@ -1,6 +1,6 @@
 ### Project Structure (Simplified)
 
-[https://r-iot.ufrn.br/](Website)
+[Website](https://r-iot.ufrn.br/)
 
 ```
 ├── conda_environment.txt
