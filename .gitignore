@@ -50,3 +50,11 @@ config.yaml
 #do not send
 *.pt
 
+# Vídeos
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.wmv
+
