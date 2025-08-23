@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>R-IoT | Monitoramento Inteligente de Animais Rurais</title>
+  <meta name="description" content="R-IoT - Sistema inteligente com design premium que combina IoT e IA para monitorar e prevenir doenças em animais rurais">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-green-50 text-gray-800 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 bg-white bg-opacity-90 backdrop-blur shadow-md z-50 py-2 px-4 flex flex-wrap justify-between items-center hide-on-print">
+    <div class="flex items-center space-x-3">
+      <i class="fas fa-network-wired text-green-600 text-2xl"></i>
+      <span class="font-bold text-2xl text-green-700 tracking-wide">R-IoT</span>
+    </div>
+    <ul class="flex space-x-6 text-lg font-semibold">
+      <li><a href="#sobre" class="hover:text-green-600 transition">Sobre</a></li>
+      <li><a href="#tecnologia" class="hover:text-green-600 transition">Tecnologia</a></li>
+      <li><a href="#beneficios" class="hover:text-green-600 transition">Benefícios</a></li>
+      <li><a href="#como-funciona" class="hover:text-green-600 transition">Como Funciona</a></li>
+      <li><a href="#contato" class="hover:text-green-600 transition">Contato</a></li>
+    </ul>
+  </nav>
+  
+<!-- Hero Section Atualizada -->
+<section class="max-w-5xl mx-auto mt-8 px-4 md:px-2 py-10 bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg border border-green-100/50">
+  <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8">
+    <div class="md:w-1/2 space-y-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-green-700 leading-tight mb-2">
+        Monitoramento Inteligente para Ambientes Agropecuários
+      </h1>
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">
+        IoT e Inteligência Artificial no Campo<br>
+        <span class="text-green-600">Tecnologia para decisões mais seguras e produtivas.</span>
+      </h2>
+      <div class="relative">
+        <div class="absolute -inset-4 bg-green-50/30 rounded-xl -z-10"></div>
+        <p class="text-gray-600 text-lg text-justify p-6">
+          O R-IoT é uma solução inovadora voltada à análise agropecuária, integrando sensores IoT, câmeras inteligentes e algoritmos de inteligência artificial para gerar informações estratégicas sobre os animais e o ambiente rural. A plataforma permite o monitoramento em tempo real da saúde animal, qualidade do solo, microclima e uso de recursos, ajudando o produtor a antecipar problemas, otimizar o manejo e tornar a produção mais eficiente e sustentável — resultando em alimentos mais saudáveis e produzidos com responsabilidade.
+        </p>
+      </div>
+      <!-- 
+      <a href="#contato" class="inline-block mt-6 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-lg text-lg font-bold transition">
+        Solicite uma Demonstração
+      </a>
+      -->
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <div class="relative">
+        <img src="assets/smartFarm2.png"
+             alt="Vaca com sensor IoT"
+             class="rounded-3xl shadow-lg object-cover w-[560px] h-[420px] border-4 border-green-200 z-10 relative"
+             loading="lazy">
+        <div class="absolute -inset-4 bg-green-100/30 rounded-3xl blur-md z-0"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+
+  <!-- Sobre o Projeto -->
+  <section id="sobre" class="max-w-5xl mx-auto mt-10 px-4 md:px-2 py-10 bg-white rounded-3xl shadow-lg">
+    <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center"><i class="fas fa-info-circle mr-3 text-green-500"></i>Sobre o Projeto</h2>
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="md:w-1/2 flex flex-col justify-center">
+        <p class="text-lg text-gray-700 mb-2">
+          <strong>R-IoT</strong> é uma plataforma integrável de monitoramento agropecuário que analisa, em tempo real, a saúde animal e as condições do campo. Com sensores em coleiras, câmeras e dispositivos no solo, monitora comportamento dos animais, clima local e plantios, usando inteligência artificial para antecipar riscos e auxiliar na tomada de decisões mais precisas e sustentáveis.      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <img src="assets/cow3.webp"
+          alt="Vacas pastando" class="rounded-xl shadow-lg object-cover w-[370px] h-[220px] border-2 border-blue-100" loading="lazy">
+      </div>
+    </div>
+  </section>
+  
+<!-- Nossa Tecnologia -->
+<section id="tecnologia" class="max-w-5xl mx-auto mt-12 px-4 md:px-2 py-10 bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl shadow-md">
+  <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center"><i class="fas fa-microchip mr-3 text-green-500"></i>Tecnologia</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-6">
+    <div class="bg-white rounded-xl p-5 shadow flex flex-col items-center custom-card">
+      <img src="assets/iot.png" alt="Sensor IoT em pasto" class="rounded-full mb-3 w-20 h-20 object-cover shadow">
+      <h3 class="font-bold text-xl mb-2 text-gray-900 text-center">Sensores IoT</h3>
+      <p class="text-gray-600 text-center">
+        Coletam dados precisos sobre temperatura, atividade e localização dos animais, com envio instantâneo à nuvem.
+      </p>
+    </div>
+    <div class="bg-white rounded-xl p-5 shadow flex flex-col items-center custom-card">
+      <img src="assets/cam.png" alt="Câmera rural" class="rounded-full mb-3 w-20 h-20 object-cover shadow">
+      <h3 class="font-bold text-xl mb-2 text-gray-900 text-center">Câmeras Inteligentes</h3>
+      <p class="text-gray-600 text-center">
+        Analisam o comportamento animal, identificando sinais como apatia, estresse ou movimentos fora do padrão.
+      </p>
+    </div>
+    <div class="bg-white rounded-xl p-5 shadow flex flex-col items-center custom-card">
+      <img src="assets/food.png" alt="Alimentos Saudáveis" class="rounded-full mb-3 w-20 h-20 object-cover shadow">
+      <h3 class="font-bold text-xl mb-2 text-gray-900 text-center">Alimentos Saudáveis</h3>
+      <p class="text-gray-600 text-center">
+        Mais bem-estar animal e menos desperdício, resultando em alimentos seguros e produzidos com responsabilidade.
+      </p>
+    </div>
+    <div class="bg-white rounded-xl p-5 shadow flex flex-col items-center custom-card">
+      <img src="assets/ia.png" alt="Representação IA animal" class="rounded-full mb-3 w-20 h-20 object-cover shadow">
+      <h3 class="font-bold text-xl mb-2 text-gray-900 text-center">Plataforma IA</h3>
+      <p class="text-gray-600 text-center">
+        Processa os dados em tempo real, prevê riscos e envia alertas para decisões rápidas e assertivas.
+      </p>
+    </div>
+  </div>
+</section>
+  
+<!-- Benefícios -->
+<section id="beneficios" class="max-w-5xl mx-auto mt-12 px-4 md:px-2 py-10 bg-white rounded-3xl shadow-lg">
+  <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center"><i class="fas fa-star mr-3 text-green-500"></i>Benefícios</h2>
+  <div class="grid gap-8 md:grid-cols-2">
+    <ul class="space-y-5 text-gray-700 text-lg">
+      <li class="flex items-start">
+        <i class="fas fa-check-circle text-green-600 mr-3 mt-1 text-xl"></i>
+        <div>
+          <h3 class="font-semibold text-green-700">Detecção precoce de doenças</h3>
+          <p>Identificação de problemas até 72h antes dos sintomas visíveis, reduzindo mortalidade em até 30%.</p>
+        </div>
+      </li>
+      <li class="flex items-start">
+        <i class="fas fa-check-circle text-green-600 mr-3 mt-1 text-xl"></i>
+        <div>
+          <h3 class="font-semibold text-green-700">Aumento da produtividade</h3>
+          <p>Gestão assertiva do rebanho com dados em tempo real, aumentando produção leiteira e ganho de peso.</p>
+        </div>
+      </li>
+      <li class="flex items-start">
+        <i class="fas fa-check-circle text-green-600 mr-3 mt-1 text-xl"></i>
+        <div>
+          <h3 class="font-semibold text-green-700">Qualidade superior dos alimentos</h3>
+          <p>Animais mais saudáveis produzem alimentos de melhor qualidade, com menor uso de antibióticos e maior valor nutricional.</p>
+        </div>
+      </li>
+      <li class="flex items-start">
+        <i class="fas fa-check-circle text-green-600 mr-3 mt-1 text-xl"></i>
+        <div>
+          <h3 class="font-semibold text-green-700">Gestão simplificada</h3>
+          <p>Relatórios automáticos transformam dados complexos em informações práticas para decisões rápidas.</p>
+        </div>
+      </li>
+      <li class="flex items-start">
+        <i class="fas fa-check-circle text-green-600 mr-3 mt-1 text-xl"></i>
+        <div>
+          <h3 class="font-semibold text-green-700">Monitoramento remoto</h3>
+          <p>Acompanhamento 24h via aplicativo ou web, permitindo intervenções oportunas mesmo à distância.</p>
+        </div>
+      </li>
+    </ul>
+    <div class="flex flex-col items-center justify-center">
+      <div class="w-full flex justify-center">
+        <canvas id="benefitsChart" width="420" height="340"></canvas>
+      </div>
+      <div class="mt-4 text-center">
+        <p class="text-gray-600 italic">Principais benefícios reportados pelos produtores</p>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var ctx = document.getElementById('benefitsChart').getContext('2d');
+          new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+              labels: ['Prevenção', 'Produtividade', 'Qualidade', 'Gestão', 'Monitoramento'],
+              datasets: [{
+                data: [30, 25, 20, 15, 10],
+                backgroundColor: [
+                  '#16A34A', '#22D3EE', '#FFB020', '#A3E635', '#38BDF8'
+                ],
+                borderWidth: 2,
+                borderColor: '#fff'
+              }]
+            },
+            options: {
+              plugins: {
+                legend: {
+                  display: true,
+                  position: 'bottom',
+                  labels: {
+                    font: {
+                      size: 16
+                    }
+                  }
+                },
+                title: {
+                  display: true,
+                  text: 'Impacto do R-IoT',
+                  font: {
+                    size: 18,
+                    weight: 'bold'
+                  },
+                  color: '#16A34A',
+                  padding: {
+                    bottom: 10
+                  }
+                }
+              },
+              cutout: '70%',
+              responsive: false,
+              animation: false
+            }
+          });
+        });
+      </script>
+    </div>
+  </div>
+</section>
+  
+<!-- Como funciona -->
+<section id="como-funciona" class="max-w-5xl mx-auto mt-12 px-4 md:px-2 py-10 bg-gradient-to-r from-blue-50 to-green-50 rounded-3xl shadow-md">
+  <h2 class="text-3xl font-bold text-green-700 mb-8 flex items-center"><i class="fas fa-project-diagram mr-3 text-green-500"></i>Como Funciona</h2>
+  
+  <div class="relative">
+    <!-- Linha de conexão principal -->
+    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-green-500 transform -translate-x-1/2 rounded-full"></div>
+    
+    <!-- Etapas do processo -->
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-16 relative">
+      <!-- Etapa 1 - Texto à direita, imagem à esquerda -->
+      <div class="relative flex items-center justify-end">
+        <img src="assets/5.gif" alt="Monitoramento de rebanho" class="rounded-xl shadow-md w-full h-48 object-cover border-2 border-green-200 hover:scale-105 transition-transform" loading="lazy">
+      </div>
+      <div class="md:text-left md:pl-10 relative">
+        <div class="hidden md:block absolute left-0 top-5 w-10 h-10 bg-green-500 rounded-full border-4 border-white transform -translate-x-1/2 z-10">
+          <div class="flex items-center justify-center w-full h-full">
+            <span class="text-white font-bold text-center">1</span>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+          <h3 class="text-xl font-bold text-green-700 mb-2">Coleta de Dados</h3>
+          <p class="text-gray-700">Os sensores IoT acoplados aos animais monitoram constantemente seus sinais vitais, comportamento e localização. Sensores ambientais capturam dados sobre temperatura, umidade e qualidade do ar. As câmeras inteligentes registram padrões de movimento e interações do rebanho.</p>
+        </div>
+      </div>
+      
+      <!-- Etapa 2 - Texto à esquerda, imagem à direita -->
+      <div class="md:text-right md:pr-10 relative">
+        <div class="hidden md:block absolute right-0 top-5 w-10 h-10 bg-green-500 rounded-full border-4 border-white transform translate-x-1/2 z-10">
+          <div class="flex items-center justify-center w-full h-full">
+            <span class="text-white font-bold text-center">2</span>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500 md:border-l-0 md:border-r-4">
+          <h3 class="text-xl font-bold text-green-700 mb-2">Processamento em Nuvem</h3>
+          <p class="text-gray-700">Dados são transmitidos em tempo real para nossa plataforma na nuvem através de conexão segura. A transmissão é otimizada para funcionar mesmo em áreas rurais com conexão limitada. Algoritmos de IA processam e correlacionam os dados.</p>
+        </div>
+      </div>
+      <div class="relative flex items-center">
+        <img src="assets/6.gif" alt="Tecnologia no campo" class="rounded-xl shadow-md w-full h-48 object-cover border-2 border-green-200 hover:scale-105 transition-transform" loading="lazy">
+      </div>
+      
+      <!-- Etapa 3 - Texto à direita, imagem à esquerda -->
+      <div class="relative flex items-center justify-end">
+        <img src="assets/cow2.webp" alt="Análise de dados agropecuários" class="rounded-xl shadow-md w-full h-48 object-cover border-2 border-green-200 hover:scale-105 transition-transform" loading="lazy">
+      </div>
+      <div class="md:text-left md:pl-10 relative">
+        <div class="hidden md:block absolute left-0 top-5 w-10 h-10 bg-green-500 rounded-full border-4 border-white transform -translate-x-1/2 z-10">
+          <div class="flex items-center justify-center w-full h-full">
+            <span class="text-white font-bold text-center">3</span>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+          <h3 class="text-xl font-bold text-green-700 mb-2">Análise Inteligente</h3>
+          <p class="text-gray-700">Nossa IA especializada analisa os padrões e identifica anomalias que podem indicar problemas de saúde, condições climáticas desfavoráveis ou questões de manejo. O sistema aprende continuamente com novos dados, adaptando-se às características específicas do seu rebanho.</p>
+        </div>
+      </div>
+      
+      <!-- Etapa 4 - Texto à esquerda, imagem à direita -->
+      <div class="md:text-right md:pr-10 relative">
+        <div class="hidden md:block absolute right-0 top-5 w-10 h-10 bg-green-500 rounded-full border-4 border-white transform translate-x-1/2 z-10">
+          <div class="flex items-center justify-center w-full h-full">
+            <span class="text-white font-bold text-center">4</span>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500 md:border-l-0 md:border-r-4">
+          <h3 class="text-xl font-bold text-green-700 mb-2">Alertas e Recomendações</h3>
+          <p class="text-gray-700">O produtor recebe alertas imediatos sobre problemas potenciais via aplicativo móvel ou e-mail. O sistema fornece recomendações específicas baseadas em evidências para cada situação. Dashboards personalizáveis mostram métricas-chave e tendências do rebanho.</p>
+        </div>
+      </div>
+      <div class="relative flex items-center">
+        <img src="assets/7.gif" alt="Dashboard de alertas" class="rounded-xl shadow-md w-full h-48 object-cover border-2 border-green-200 hover:scale-105 transition-transform" loading="lazy">
+      </div>
+      
+      <!-- Etapa 5 - Texto à direita, imagem à esquerda -->
+      <div class="relative flex items-center justify-end">
+        <img src="assets/8.gif" alt="Relatórios de produtividade" class="rounded-xl shadow-md w-full h-48 object-cover border-2 border-green-200 hover:scale-105 transition-transform" loading="lazy">
+      </div>
+      <div class="md:text-left md:pl-10 relative">
+        <div class="hidden md:block absolute left-0 top-5 w-10 h-10 bg-green-500 rounded-full border-4 border-white transform -translate-x-1/2 z-10">
+          <div class="flex items-center justify-center w-full h-full">
+            <span class="text-white font-bold text-center">5</span>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+          <h3 class="text-xl font-bold text-green-700 mb-2">Resultados Comprovados</h3>
+          <p class="text-gray-700">Relatórios periódicos documentam os ganhos de produtividade e economia gerados pelo sistema. Análises históricas ajudam a identificar padrões sazonais e oportunidades de melhorias. A integração com outros sistemas de gestão rural permite uma visão completa da operação.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Versão Mobile (Simplificada) -->
+  <div class="md:hidden mt-8">
+    <div class="space-y-8">
+      <!-- Item 1 -->
+      <div class="relative border-l-4 border-green-500 pl-6 pb-8">
+        <div class="absolute -left-3 top-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+          <span class="text-white font-bold text-center text-sm">1</span>
+        </div>
+        <div class="mb-3">
+          <span class="font-bold text-green-700">Coleta de Dados:</span> 
+          <p class="text-gray-700">Sensores em animais e no ambiente transmitem dados continuamente.</p>
+        </div>
+        <img src="assets/cow2.webp" alt="Monitoramento de rebanho" class="rounded-xl shadow-md w-full h-40 object-cover border-2 border-green-200" loading="lazy">
+      </div>
+      
+      <!-- Item 2 -->
+      <div class="relative border-l-4 border-green-500 pl-6 pb-8">
+        <div class="absolute -left-3 top-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+          <span class="text-white font-bold text-center text-sm">2</span>
+        </div>
+        <div class="mb-3">
+          <span class="font-bold text-green-700">Processamento em Nuvem:</span>
+          <p class="text-gray-700">Informações são enviadas de forma segura para processamento.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=500&q=80" alt="Tecnologia no campo" class="rounded-xl shadow-md w-full h-40 object-cover border-2 border-green-200" loading="lazy">
+      </div>
+      
+      <!-- Item 3 -->
+      <div class="relative border-l-4 border-green-500 pl-6 pb-8">
+        <div class="absolute -left-3 top-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+          <span class="text-white font-bold text-center text-sm">3</span>
+        </div>
+        <div class="mb-3">
+          <span class="font-bold text-green-700">Análise Inteligente:</span>
+          <p class="text-gray-700">IA processa padrões e identifica anomalias relevantes.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=500&q=80" alt="Análise de dados agropecuários" class="rounded-xl shadow-md w-full h-40 object-cover border-2 border-green-200" loading="lazy">
+      </div>
+      
+      <!-- Item 4 -->
+      <div class="relative border-l-4 border-green-500 pl-6 pb-8">
+        <div class="absolute -left-3 top-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+          <span class="text-white font-bold text-center text-sm">4</span>
+        </div>
+        <div class="mb-3">
+          <span class="font-bold text-green-700">Alertas e Recomendações:</span>
+          <p class="text-gray-700">Produtor recebe notificações e orientações personalizadas.</p>
+        </div>
+        <img src="/api/placeholder/400/320" alt="Dashboard de alertas" class="rounded-xl shadow-md w-full h-40 object-cover border-2 border-green-200" loading="lazy">
+      </div>
+      
+      <!-- Item 5 -->
+      <div class="relative border-l-4 border-green-500 pl-6">
+        <div class="absolute -left-3 top-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+          <span class="text-white font-bold text-center text-sm">5</span>
+        </div>
+        <div class="mb-3">
+          <span class="font-bold text-green-700">Resultados Comprovados:</span>
+          <p class="text-gray-700">Relatórios e análises documentam ganhos de produtividade.</p>
+        </div>
+        <img src="/api/placeholder/400/320" alt="Relatórios de produtividade" class="rounded-xl shadow-md w-full h-40 object-cover border-2 border-green-200" loading="lazy">
+      </div>
+    </div>
+  </div>
+  
+  <!-- CTA -->
+  <div class="mt-10 text-center">
+    <a href="#contato" class="inline-block px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-lg text-lg font-bold transition">
+      Quero saber mais
+    </a>
+  </div>
+</section>
+
+  <!-- Contato -->
+  <section id="contato" class="max-w-4xl mx-auto mt-12 px-4 py-10 mb-8 bg-white rounded-3xl shadow-lg">
+    <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center"><i class="fas fa-envelope mr-3 text-green-500"></i>Fale Conosco</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <form class="space-y-5 hover:shadow-inner transition" autocomplete="off">
+        <div>
+          <label class="block text-sm font-bold text-green-700 mb-2">Nome</label>
+          <input type="text" class="w-full border border-green-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Seu nome">
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-green-700 mb-2">E-mail</label>
+          <input type="email" class="w-full border border-green-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Seu e-mail">
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-green-700 mb-2">Mensagem</label>
+          <textarea class="w-full border border-green-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" rows="4" placeholder="Como podemos ajudar?"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded-lg shadow transition text-lg">Enviar</button>
+      </form>
+      <div class="flex flex-col space-y-6 justify-center items-start">
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-map-marker-alt text-green-600 text-xl"></i>
+          <span>Brasil (Atuação nacional)</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-phone-alt text-green-600 text-xl"></i>
+          <span>+55 84 12345-6789</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-envelope text-green-600 text-xl"></i>
+          <span>
+            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d0e0203190c19022d1f040219430e0200430f1f">[email&#160;protected]</a>
+          </span>
+        </div>
+        <div>
+          <span class="font-semibold text-green-700">Siga nossas Redes:</span>
+          <div class="flex space-x-4 mt-2">
+           <a href="#" title="Instagram"><i class="fab fa-instagram text-2xl text-pink-500 hover:text-pink-700"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin text-2xl text-blue-600 hover:text-blue-800"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="text-center py-8 text-gray-600 text-sm">
+    R-IoT. Projeto desenvolvido na UFRN.
+  </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* Configurações globais */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #f0f9ff, #f0fdf4);
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+/* Estilos para impressão */
+@media print {
+  nav, .hide-on-print { 
+    display: none !important; 
+  }
+  
+  body { 
+    background: #fff !important; 
+    color: #000 !important;
+  }
+}
+
+/* Cards responsivos */
+.custom-card {
+  min-width: 0 !important;
+  word-break: break-word;
+}
+
+/* Transições suaves para links e botões */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Estilos para imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Classes utilitárias adicionais */
+.shadow-soft {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
