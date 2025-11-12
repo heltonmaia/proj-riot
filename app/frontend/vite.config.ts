@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
           'playground.heltonmaia.com'
         ]
       },
-      base: '/riot/', // Base path para servir através do nginx em /riot/
+      // base: '/riot/' - NÃO usar em dev, só em build de produção
       plugins: [react()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
