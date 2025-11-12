@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import asyncio
+import os
 from typing import List
 
 from models import Animal, Herd, DataResponse, AnimalsResponse, HerdsResponse
@@ -48,9 +49,17 @@ app = FastAPI(
 )
 
 # Configuração de CORS
+# Em desenvolvimento: permite todas as origens (*)
+# Em produção: use ALLOWED_ORIGINS (ex: export ALLOWED_ORIGINS="https://seu-dominio.com,https://app.seu-dominio.com")
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "*")
+if allowed_origins != "*":
+    allowed_origins = [origin.strip() for origin in allowed_origins.split(",")]
+else:
+    allowed_origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Em produção, especifique os domínios permitidos
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

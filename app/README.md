@@ -24,7 +24,33 @@ app/
 
 ## 🚀 Quick Start
 
-### 1️⃣ Iniciar o Backend
+### Modo Rápido (Scripts Automáticos)
+
+**Desenvolvimento (Local):**
+```bash
+./start.sh dev
+# Frontend: http://localhost:5173
+# Backend:  http://localhost:8000
+```
+
+**Produção (Server):**
+```bash
+./start.sh prod
+# Backend: http://0.0.0.0:8000
+# Frontend: faça build separado (ver DEPLOYMENT.md)
+```
+
+**Parar servidores:**
+```bash
+./stop.sh
+```
+
+### Modo Manual
+
+<details>
+<summary>Clique para ver instruções manuais</summary>
+
+#### 1️⃣ Iniciar o Backend
 
 ```bash
 cd backend
@@ -37,13 +63,16 @@ source .venv/bin/activate  # Linux/Mac
 # Instalar dependências
 pip install -r requirements.txt
 
-# Rodar servidor
-python main.py
+# Desenvolvimento
+uvicorn main:app --reload
+
+# Produção
+gunicorn main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
 ```
 
 Backend estará em: `http://localhost:8000`
 
-### 2️⃣ Iniciar o Frontend
+#### 2️⃣ Iniciar o Frontend (apenas desenvolvimento)
 
 Em outro terminal:
 
@@ -62,6 +91,8 @@ npm run dev
 ```
 
 Frontend estará em: `http://localhost:5173`
+
+</details>
 
 ## 📡 Arquitetura
 
@@ -153,10 +184,11 @@ npm run dev
 ### Documentação da API
 Acesse: http://localhost:8000/docs
 
-## 📝 READMEs Detalhados
+## 📝 Documentação
 
-- [Backend README](./backend/README.md)
-- [Frontend README](./frontend/README.md)
+- **[Guia de Deploy](./DEPLOYMENT.md)** - Deploy em produção, configuração de servidor, CORS, etc.
+- [Backend README](./backend/README.md) - Documentação da API
+- [Frontend README](./frontend/README.md) - Documentação do frontend
 
 ## 🔐 Segurança
 

@@ -24,15 +24,27 @@ class DataManager:
 
         # Carrega animais e inicializa com último registro do histórico
         for animal_data in data['animals']:
-            animal = Animal(**animal_data)
+            # Inicializa campos obrigatórios com valores padrão
+            if 'history' in animal_data and len(animal_data['history']) > 0:
+                # Se tem histórico, usa o último registro
+                last_record = animal_data['history'][-1]
+                animal_data['status'] = last_record['status']
+                animal_data['location'] = last_record['location']
+                animal_data['temperature'] = last_record['temperature']
+                animal_data['steps'] = last_record['steps']
+            else:
+                # Valores padrão se não tem histórico
+                if 'status' not in animal_data:
+                    animal_data['status'] = AnimalStatus.Healthy
+                if 'location' not in animal_data:
+                    animal_data['location'] = {'lat': 0.0, 'lng': 0.0}
+                if 'temperature' not in animal_data:
+                    animal_data['temperature'] = 38.5
+                if 'steps' not in animal_data:
+                    animal_data['steps'] = 0
 
-            # Se tem histórico, pega o último registro
-            if animal.history and len(animal.history) > 0:
-                last_record = animal.history[-1]
-                animal.status = last_record.status
-                animal.location = last_record.location
-                animal.temperature = last_record.temperature
-                animal.steps = last_record.steps
+            # Cria o objeto Animal
+            animal = Animal(**animal_data)
 
             # Verifica alertas iniciais
             animal = self._check_alerts(animal)
