@@ -1,0 +1,342 @@
+{
+  "herds": [
+    {
+      "id": 1,
+      "name": "Rebanho Litorâneo (Ponta Negra)",
+      "region": "Zona Sul de Natal",
+      "location": { "lat": -5.87, "lng": -35.22 },
+      "polygon": [
+        { "lat": -5.865, "lng": -35.225 },
+        { "lat": -5.870, "lng": -35.215 },
+        { "lat": -5.875, "lng": -35.220 },
+        { "lat": -5.873, "lng": -35.228 }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Rebanho Norte (Redinha)",
+      "region": "Zona Norte de Natal",
+      "location": { "lat": -5.75, "lng": -35.25 },
+      "polygon": [
+        { "lat": -5.745, "lng": -35.255 },
+        { "lat": -5.748, "lng": -35.245 },
+        { "lat": -5.755, "lng": -35.248 },
+        { "lat": -5.753, "lng": -35.257 }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Rebanho Sul (Pium)",
+      "region": "Litoral Sul",
+      "location": { "lat": -5.93, "lng": -35.20 },
+      "polygon": [
+        { "lat": -5.925, "lng": -35.205 },
+        { "lat": -5.928, "lng": -35.195 },
+        { "lat": -5.935, "lng": -35.198 },
+        { "lat": -5.933, "lng": -35.207 }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Rebanho Jundiaí (Macaíba)",
+      "region": "Região Metropolitana",
+      "location": { "lat": -5.88, "lng": -35.36 },
+      "polygon": [
+        { "lat": -5.875, "lng": -35.365 },
+        { "lat": -5.878, "lng": -35.355 },
+        { "lat": -5.885, "lng": -35.358 },
+        { "lat": -5.883, "lng": -35.367 }
+      ]
+    }
+  ],
+  "animals": [
+    {
+      "id": 1, "collarId": "H1-01", "herdId": 1, "name": "Mimoza", "type": "Vaca", "breed": "Nelore", "age": 48, "weight": 650,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.871, "lng": -35.221}, "temperature": 38.5, "steps": 5200},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.870, "lng": -35.222}, "temperature": 38.6, "steps": 5350},
+        {"date": "2024-07-12", "status": 1, "location": {"lat": -5.869, "lng": -35.223}, "temperature": 39.5, "steps": 4100},
+        {"date": "2024-07-13", "status": 1, "location": {"lat": -5.868, "lng": -35.222}, "temperature": 39.2, "steps": 4500},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.870, "lng": -35.220}, "temperature": 38.7, "steps": 5500},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.872, "lng": -35.219}, "temperature": 38.5, "steps": 5800},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.871, "lng": -35.220}, "temperature": 38.6, "steps": 6100}
+      ]
+    },
+    {
+      "id": 2, "collarId": "H1-02", "herdId": 1, "name": "Estrela", "type": "Vaca", "breed": "Angus", "age": 36, "weight": 580,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.873, "lng": -35.218}, "temperature": 38.4, "steps": 6100},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.874, "lng": -35.219}, "temperature": 38.5, "steps": 6300},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.873, "lng": -35.220}, "temperature": 38.6, "steps": 6250},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.872, "lng": -35.221}, "temperature": 38.5, "steps": 6400},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.873, "lng": -35.220}, "temperature": 38.7, "steps": 6550},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.874, "lng": -35.218}, "temperature": 38.4, "steps": 6700},
+        {"date": "2024-07-16", "status": 1, "location": {"lat": -5.880, "lng": -35.210}, "temperature": 38.5, "steps": 6800}
+      ]
+    },
+    {
+      "id": 3, "collarId": "H1-03", "herdId": 1, "name": "Brilhante", "type": "Bezerro", "breed": "Nelore", "age": 6, "weight": 110,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.866, "lng": -35.224}, "temperature": 38.8, "steps": 3200},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.867, "lng": -35.223}, "temperature": 38.9, "steps": 3300},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.868, "lng": -35.224}, "temperature": 38.7, "steps": 3400},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.867, "lng": -35.225}, "temperature": 39.0, "steps": 3500},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.866, "lng": -35.224}, "temperature": 38.8, "steps": 3600},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.867, "lng": -35.223}, "temperature": 38.9, "steps": 3700},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.868, "lng": -35.222}, "temperature": 38.8, "steps": 3800}
+      ]
+    },
+    {
+      "id": 4, "collarId": "H1-04", "herdId": 1, "name": "Valente", "type": "Touro", "breed": "Angus", "age": 55, "weight": 890,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.874, "lng": -35.216}, "temperature": 38.2, "steps": 4500},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.873, "lng": -35.217}, "temperature": 38.3, "steps": 4600},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.874, "lng": -35.218}, "temperature": 38.1, "steps": 4700},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.873, "lng": -35.216}, "temperature": 38.4, "steps": 4800},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.872, "lng": -35.217}, "temperature": 38.2, "steps": 4900},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.873, "lng": -35.218}, "temperature": 38.3, "steps": 5000},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.874, "lng": -35.217}, "temperature": 38.2, "steps": 5100}
+      ]
+    },
+    {
+      "id": 5, "collarId": "H1-05", "herdId": 1, "name": "Princesa", "type": "Vaca", "breed": "Nelore", "age": 30, "weight": 550,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.872, "lng": -35.226}, "temperature": 38.6, "steps": 6200},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.871, "lng": -35.227}, "temperature": 38.5, "steps": 6300},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.872, "lng": -35.225}, "temperature": 38.7, "steps": 6400},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.871, "lng": -35.226}, "temperature": 38.6, "steps": 6500},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.870, "lng": -35.227}, "temperature": 38.8, "steps": 6600},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.871, "lng": -35.225}, "temperature": 38.6, "steps": 6700},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.872, "lng": -35.226}, "temperature": 38.5, "steps": 6800}
+      ]
+    },
+    {
+      "id": 6, "collarId": "H2-01", "herdId": 2, "name": "Bela", "type": "Bezerro", "breed": "Brahman", "age": 8, "weight": 120,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.751, "lng": -35.251}, "temperature": 38.8, "steps": 3100},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.750, "lng": -35.252}, "temperature": 38.9, "steps": 3250},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.749, "lng": -35.250}, "temperature": 38.7, "steps": 3400},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.750, "lng": -35.249}, "temperature": 39.0, "steps": 3550},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.751, "lng": -35.251}, "temperature": 38.8, "steps": 3700},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.752, "lng": -35.252}, "temperature": 38.9, "steps": 3850},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.751, "lng": -35.250}, "temperature": 38.8, "steps": 4000}
+      ]
+    },
+    {
+      "id": 7, "collarId": "H2-02", "herdId": 2, "name": "Pandora", "type": "Vaca", "breed": "Girolando", "age": 60, "weight": 710,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.753, "lng": -35.248}, "temperature": 38.3, "steps": 5500},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.752, "lng": -35.249}, "temperature": 38.4, "steps": 5600},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.751, "lng": -35.247}, "temperature": 38.5, "steps": 5750},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.752, "lng": -35.248}, "temperature": 38.6, "steps": 5800},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.753, "lng": -35.249}, "temperature": 38.4, "steps": 5950},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.754, "lng": -35.248}, "temperature": 38.5, "steps": 6100},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.753, "lng": -35.247}, "temperature": 38.6, "steps": 6200}
+      ]
+    },
+    {
+      "id": 8, "collarId": "H2-03", "herdId": 2, "name": "Ametista", "type": "Vaca", "breed": "Brahman", "age": 45, "weight": 630,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.746, "lng": -35.254}, "temperature": 38.5, "steps": 5800},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.747, "lng": -35.253}, "temperature": 38.6, "steps": 5900},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.748, "lng": -35.252}, "temperature": 38.4, "steps": 6000},
+        {"date": "2024-07-13", "status": 1, "location": {"lat": -5.747, "lng": -35.254}, "temperature": 39.4, "steps": 4500},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.746, "lng": -35.253}, "temperature": 38.7, "steps": 5800},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.747, "lng": -35.252}, "temperature": 38.5, "steps": 6100},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.748, "lng": -35.253}, "temperature": 38.6, "steps": 6200}
+      ]
+    },
+    {
+      "id": 9, "collarId": "H2-04", "herdId": 2, "name": "Corisco", "type": "Touro", "breed": "Girolando", "age": 65, "weight": 980,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.754, "lng": -35.256}, "temperature": 38.1, "steps": 4200},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.753, "lng": -35.255}, "temperature": 38.2, "steps": 4300},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.754, "lng": -35.254}, "temperature": 38.0, "steps": 4400},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.755, "lng": -35.256}, "temperature": 38.3, "steps": 4500},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.754, "lng": -35.255}, "temperature": 38.1, "steps": 4600},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.753, "lng": -35.254}, "temperature": 38.2, "steps": 4700},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.754, "lng": -35.255}, "temperature": 38.1, "steps": 4800}
+      ]
+    },
+    {
+      "id": 10, "collarId": "H2-05", "herdId": 2, "name": "Jade", "type": "Vaca", "breed": "Brahman", "age": 50, "weight": 680,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.749, "lng": -35.246}, "temperature": 38.4, "steps": 6300},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.750, "lng": -35.247}, "temperature": 38.5, "steps": 6400},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.749, "lng": -35.248}, "temperature": 38.6, "steps": 6500},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.750, "lng": -35.246}, "temperature": 38.5, "steps": 6600},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.749, "lng": -35.247}, "temperature": 38.7, "steps": 6700},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.750, "lng": -35.248}, "temperature": 38.4, "steps": 6800},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.749, "lng": -35.246}, "temperature": 38.5, "steps": 6900}
+      ]
+    },
+     {
+      "id": 11, "collarId": "H2-06", "herdId": 2, "name": "Pingo", "type": "Bezerro", "breed": "Girolando", "age": 7, "weight": 115,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.748, "lng": -35.249}, "temperature": 38.9, "steps": 3300},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.749, "lng": -35.250}, "temperature": 39.0, "steps": 3400},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.748, "lng": -35.251}, "temperature": 38.8, "steps": 3500},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.749, "lng": -35.249}, "temperature": 39.1, "steps": 3600},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.748, "lng": -35.250}, "temperature": 38.9, "steps": 3700},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.749, "lng": -35.251}, "temperature": 39.0, "steps": 3800},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.748, "lng": -35.249}, "temperature": 38.9, "steps": 3900}
+      ]
+    },
+    {
+      "id": 12, "collarId": "H3-01", "herdId": 3, "name": "Furia", "type": "Touro", "breed": "Holandês", "age": 72, "weight": 950,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.931, "lng": -35.201}, "temperature": 38.2, "steps": 4800},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.930, "lng": -35.202}, "temperature": 38.3, "steps": 4950},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.929, "lng": -35.200}, "temperature": 38.1, "steps": 5100},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.930, "lng": -35.199}, "temperature": 38.4, "steps": 5250},
+        {"date": "2024-07-14", "status": 2, "location": {"lat": -5.931, "lng": -35.201}, "temperature": 40.8, "steps": 2500},
+        {"date": "2024-07-15", "status": 1, "location": {"lat": -5.932, "lng": -35.202}, "temperature": 39.8, "steps": 3500},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.931, "lng": -35.200}, "temperature": 38.9, "steps": 4800}
+      ]
+    },
+     {
+      "id": 13, "collarId": "H3-02", "herdId": 3, "name": "Amorosa", "type": "Vaca", "breed": "Guzerá", "age": 58, "weight": 690,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.926, "lng": -35.204}, "temperature": 38.6, "steps": 5300},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.927, "lng": -35.203}, "temperature": 38.7, "steps": 5400},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.928, "lng": -35.202}, "temperature": 38.5, "steps": 5500},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.927, "lng": -35.204}, "temperature": 38.8, "steps": 5600},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.926, "lng": -35.203}, "temperature": 38.6, "steps": 5700},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.927, "lng": -35.202}, "temperature": 38.7, "steps": 5800},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.928, "lng": -35.203}, "temperature": 38.6, "steps": 5900}
+      ]
+    },
+    {
+      "id": 14, "collarId": "H3-03", "herdId": 3, "name": "Dourada", "type": "Vaca", "breed": "Holandês", "age": 42, "weight": 610,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.934, "lng": -35.196}, "temperature": 38.3, "steps": 5900},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.933, "lng": -35.197}, "temperature": 38.4, "steps": 6000},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.934, "lng": -35.198}, "temperature": 38.2, "steps": 6100},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.933, "lng": -35.196}, "temperature": 38.5, "steps": 6200},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.932, "lng": -35.197}, "temperature": 38.3, "steps": 6300},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.933, "lng": -35.198}, "temperature": 38.4, "steps": 6400},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.934, "lng": -35.197}, "temperature": 38.3, "steps": 6500}
+      ]
+    },
+    {
+      "id": 15, "collarId": "H3-04", "herdId": 3, "name": "Trovão", "type": "Touro", "breed": "Guzerá", "age": 50, "weight": 850,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.930, "lng": -35.206}, "temperature": 38.0, "steps": 4300},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.929, "lng": -35.205}, "temperature": 38.1, "steps": 4400},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.930, "lng": -35.204}, "temperature": 37.9, "steps": 4500},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.931, "lng": -35.206}, "temperature": 38.2, "steps": 4600},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.930, "lng": -35.205}, "temperature": 38.0, "steps": 4700},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.929, "lng": -35.204}, "temperature": 38.1, "steps": 4800},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.930, "lng": -35.205}, "temperature": 38.0, "steps": 4900}
+      ]
+    },
+    {
+      "id": 16, "collarId": "H3-05", "herdId": 3, "name": "Fagulha", "type": "Bezerro", "breed": "Holandês", "age": 5, "weight": 95,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.928, "lng": -35.199}, "temperature": 38.7, "steps": 2800},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.929, "lng": -35.200}, "temperature": 38.8, "steps": 2900},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.928, "lng": -35.201}, "temperature": 38.6, "steps": 3000},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.929, "lng": -35.199}, "temperature": 38.9, "steps": 3100},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.928, "lng": -35.200}, "temperature": 38.7, "steps": 3200},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.929, "lng": -35.201}, "temperature": 38.8, "steps": 3300},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.928, "lng": -35.199}, "temperature": 38.7, "steps": 3400}
+      ]
+    },
+     {
+      "id": 17, "collarId": "H3-06", "herdId": 3, "name": "Preciosa", "type": "Vaca", "breed": "Guzerá", "age": 35, "weight": 590,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.932, "lng": -35.200}, "temperature": 38.5, "steps": 5400},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.931, "lng": -35.199}, "temperature": 38.6, "steps": 5500},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.932, "lng": -35.198}, "temperature": 38.4, "steps": 5600},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.931, "lng": -35.200}, "temperature": 38.7, "steps": 5700},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.930, "lng": -35.199}, "temperature": 38.5, "steps": 5800},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.931, "lng": -35.198}, "temperature": 38.6, "steps": 5900},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.932, "lng": -35.199}, "temperature": 38.5, "steps": 6000}
+      ]
+    },
+    {
+      "id": 18, "collarId": "H4-01", "herdId": 4, "name": "Mel", "type": "Vaca", "breed": "Nelore", "age": 40, "weight": 620,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.881, "lng": -35.361}, "temperature": 38.7, "steps": 7100},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.880, "lng": -35.362}, "temperature": 38.8, "steps": 7250},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.879, "lng": -35.360}, "temperature": 38.6, "steps": 7400},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.880, "lng": -35.359}, "temperature": 38.9, "steps": 7550},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.881, "lng": -35.361}, "temperature": 38.7, "steps": 7700},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.882, "lng": -35.362}, "temperature": 38.8, "steps": 7850},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.881, "lng": -35.360}, "temperature": 38.7, "steps": 8000}
+      ]
+    },
+    {
+      "id": 19, "collarId": "H4-02", "herdId": 4, "name": "Gigante", "type": "Touro", "breed": "Senepol", "age": 80, "weight": 1100,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.876, "lng": -35.364}, "temperature": 38.0, "steps": 4000},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.877, "lng": -35.363}, "temperature": 38.1, "steps": 4100},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.878, "lng": -35.362}, "temperature": 37.9, "steps": 4200},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.877, "lng": -35.364}, "temperature": 38.2, "steps": 4300},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.876, "lng": -35.363}, "temperature": 38.0, "steps": 4400},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.877, "lng": -35.362}, "temperature": 38.1, "steps": 4500},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.878, "lng": -35.363}, "temperature": 38.0, "steps": 4600}
+      ]
+    },
+    {
+      "id": 20, "collarId": "H4-03", "herdId": 4, "name": "Pipoca", "type": "Bezerro", "breed": "Nelore", "age": 4, "weight": 85,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.884, "lng": -35.356}, "temperature": 38.9, "steps": 2500},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.883, "lng": -35.357}, "temperature": 39.0, "steps": 2600},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.884, "lng": -35.358}, "temperature": 38.8, "steps": 2700},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.883, "lng": -35.356}, "temperature": 39.1, "steps": 2800},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.882, "lng": -35.357}, "temperature": 38.9, "steps": 2900},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.883, "lng": -35.358}, "temperature": 39.0, "steps": 3000},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.884, "lng": -35.357}, "temperature": 38.9, "steps": 3100}
+      ]
+    },
+    {
+      "id": 21, "collarId": "H4-04", "herdId": 4, "name": "Duquesa", "type": "Vaca", "breed": "Senepol", "age": 52, "weight": 730,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.879, "lng": -35.366}, "temperature": 38.4, "steps": 6000},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.880, "lng": -35.365}, "temperature": 38.5, "steps": 6100},
+        {"date": "2024-07-12", "status": 2, "location": {"lat": -5.879, "lng": -35.364}, "temperature": 40.5, "steps": 2200},
+        {"date": "2024-07-13", "status": 1, "location": {"lat": -5.880, "lng": -35.366}, "temperature": 39.6, "steps": 3500},
+        {"date": "2024-07-14", "status": 1, "location": {"lat": -5.879, "lng": -35.365}, "temperature": 39.2, "steps": 4800},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.880, "lng": -35.364}, "temperature": 38.8, "steps": 6200},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.879, "lng": -35.365}, "temperature": 38.6, "steps": 6300}
+      ]
+    },
+     {
+      "id": 22, "collarId": "H4-05", "herdId": 4, "name": "Marquesa", "type": "Vaca", "breed": "Nelore", "age": 38, "weight": 600,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.882, "lng": -35.360}, "temperature": 38.6, "steps": 7200},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.883, "lng": -35.361}, "temperature": 38.7, "steps": 7300},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.882, "lng": -35.362}, "temperature": 38.5, "steps": 7400},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.881, "lng": -35.360}, "temperature": 38.8, "steps": 7500},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.882, "lng": -35.361}, "temperature": 38.6, "steps": 7600},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.883, "lng": -35.362}, "temperature": 38.7, "steps": 7700},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.882, "lng": -35.360}, "temperature": 38.6, "steps": 7800}
+      ]
+    },
+     {
+      "id": 23, "collarId": "H4-06", "herdId": 4, "name": "Conde", "type": "Touro", "breed": "Senepol", "age": 68, "weight": 1050,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.878, "lng": -35.359}, "temperature": 38.2, "steps": 4100},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.879, "lng": -35.360}, "temperature": 38.3, "steps": 4200},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.878, "lng": -35.361}, "temperature": 38.1, "steps": 4300},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.877, "lng": -35.359}, "temperature": 38.4, "steps": 4400},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.878, "lng": -35.360}, "temperature": 38.2, "steps": 4500},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.879, "lng": -35.361}, "temperature": 38.3, "steps": 4600},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.878, "lng": -35.359}, "temperature": 38.2, "steps": 4700}
+      ]
+    },
+    {
+      "id": 24, "collarId": "H4-07", "herdId": 4, "name": "Zorro", "type": "Bezerro", "breed": "Nelore", "age": 9, "weight": 130,
+      "history": [
+        {"date": "2024-07-10", "status": 0, "location": {"lat": -5.880, "lng": -35.363}, "temperature": 38.8, "steps": 3000},
+        {"date": "2024-07-11", "status": 0, "location": {"lat": -5.881, "lng": -35.364}, "temperature": 38.9, "steps": 3100},
+        {"date": "2024-07-12", "status": 0, "location": {"lat": -5.880, "lng": -35.365}, "temperature": 38.7, "steps": 3200},
+        {"date": "2024-07-13", "status": 0, "location": {"lat": -5.879, "lng": -35.363}, "temperature": 39.0, "steps": 3300},
+        {"date": "2024-07-14", "status": 0, "location": {"lat": -5.880, "lng": -35.364}, "temperature": 38.8, "steps": 3400},
+        {"date": "2024-07-15", "status": 0, "location": {"lat": -5.881, "lng": -35.365}, "temperature": 38.9, "steps": 3500},
+        {"date": "2024-07-16", "status": 0, "location": {"lat": -5.880, "lng": -35.363}, "temperature": 38.8, "steps": 3600}
+      ]
+    }
+  ]
+}

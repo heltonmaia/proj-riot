@@ -59,6 +59,9 @@ Thumbs.db
 *.log
 logs/
 
+# Process IDs
+*.pid
+
 # Jupyter Notebooks
 .ipynb_checkpoints/
 

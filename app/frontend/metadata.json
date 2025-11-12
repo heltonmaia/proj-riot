@@ -1,0 +1,7 @@
+{
+  "name": "R-IoT: Monitoramento Rural Inteligente",
+  "description": "Um painel de controle para monitoramento em tempo real de animais rurais usando coleiras com sensores e GPS. Inclui um mapa de localização, estatísticas do rebanho e um chatbot com IA para insights.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

@@ -1,8 +1,0 @@
-panel>=1.4.0
-folium>=0.17.0
-holoviews>=1.19.0
-geoviews>=1.12.0
-bokeh>=3.4.0
-param>=2.1.0
-numpy>=1.24.0
-pandas>=2.0.0
