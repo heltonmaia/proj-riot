@@ -4,7 +4,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
+    const isProduction = mode === 'production';
+
     return {
+      base: isProduction ? '/riot/' : '/', // Base path apenas em produção
       server: {
         port: 5174,
         host: '0.0.0.0',
@@ -15,7 +18,6 @@ export default defineConfig(({ mode }) => {
           'playground.heltonmaia.com'
         ]
       },
-      // base: '/riot/' - NÃO usar em dev, só em build de produção
       plugins: [react()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
