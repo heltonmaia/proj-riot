@@ -92,10 +92,8 @@ kill_port() {
     fi
 }
 
-kill_port 8000
-kill_port 5173
-kill_port 3000
-kill_port 3001
+kill_port 8001  # Backend R-IoT
+kill_port 5174  # Frontend R-IoT
 
 # Limpar PIDs antigos
 rm -f backend.pid frontend.pid
@@ -112,6 +110,10 @@ check_port_free() {
         return 0  # Porta livre
     fi
 }
+
+# Portas do R-IoT (diferentes do neonatal que usa 8000 e 5173)
+BACKEND_PORT=8001
+FRONTEND_PORT=5174
 
 # ============================================
 # BACKEND
@@ -137,7 +139,7 @@ if [ "$ENVIRONMENT" == "production" ]; then
     gunicorn main:app \
         --workers 4 \
         --worker-class uvicorn.workers.UvicornWorker \
-        --bind 0.0.0.0:8000 \
+        --bind 0.0.0.0:$BACKEND_PORT \
         --access-logfile ../backend-access.log \
         --error-logfile ../backend-error.log \
         --daemon \
@@ -148,7 +150,7 @@ if [ "$ENVIRONMENT" == "production" ]; then
     if [ -f "../backend.pid" ]; then
         BACKEND_PID=$(cat ../backend.pid)
         echo -e "${GREEN}✓ Backend iniciado (PID: $BACKEND_PID)${NC}"
-        echo "   URL: http://0.0.0.0:8000"
+        echo "   URL: http://0.0.0.0:$BACKEND_PORT"
         echo "   Access Logs: backend-access.log"
         echo "   Error Logs: backend-error.log"
     else
@@ -161,14 +163,14 @@ else
     echo "Iniciando com Uvicorn (hot reload)..."
     uvicorn main:app \
         --host 0.0.0.0 \
-        --port 8000 \
+        --port $BACKEND_PORT \
         --reload \
         --log-level info > ../backend.log 2>&1 &
 
     BACKEND_PID=$!
     echo "$BACKEND_PID" > ../backend.pid
     echo -e "${GREEN}✓ Backend iniciado (PID: $BACKEND_PID)${NC}"
-    echo "   URL: http://localhost:8000"
+    echo "   URL: http://localhost:$BACKEND_PORT"
     echo "   Logs: backend.log"
 fi
 
@@ -184,7 +186,7 @@ RETRY_COUNT=0
 BACKEND_RUNNING=false
 
 while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-    if ! check_port_free 8000; then
+    if ! check_port_free $BACKEND_PORT; then
         BACKEND_RUNNING=true
         break
     fi
@@ -194,7 +196,7 @@ while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
 done
 
 if [ "$BACKEND_RUNNING" = true ]; then
-    echo -e "${GREEN}✓ Backend está rodando na porta 8000${NC}"
+    echo -e "${GREEN}✓ Backend está rodando na porta $BACKEND_PORT${NC}"
 else
     echo -e "${RED}✗ Erro ao iniciar backend${NC}"
     echo ""
@@ -239,7 +241,7 @@ if [ "$ENVIRONMENT" == "development" ]; then
     FRONTEND_PID=$!
     echo "$FRONTEND_PID" > ../frontend.pid
     echo -e "${GREEN}✓ Frontend iniciado (PID: $FRONTEND_PID)${NC}"
-    echo "   URL: http://localhost:5173"
+    echo "   URL: http://localhost:$FRONTEND_PORT"
     echo "   Logs: frontend.log"
 
     # Aguarda frontend inicializar
@@ -251,7 +253,7 @@ if [ "$ENVIRONMENT" == "development" ]; then
     RETRY_COUNT=0
 
     while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-        if ! check_port_free 5173; then
+        if ! check_port_free $FRONTEND_PORT; then
             FRONTEND_RUNNING=true
             break
         fi
@@ -261,7 +263,7 @@ if [ "$ENVIRONMENT" == "development" ]; then
     done
 
     if [ "$FRONTEND_RUNNING" = true ]; then
-        echo -e "${GREEN}✓ Frontend está rodando na porta 5173${NC}"
+        echo -e "${GREEN}✓ Frontend está rodando na porta $FRONTEND_PORT${NC}"
     else
         echo -e "${RED}✗ Erro ao iniciar frontend${NC}"
         echo "  Verifique: cat frontend.log"
@@ -284,11 +286,11 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo -e "${GREEN}✓ R-IoT Application está rodando!${NC}"
 echo ""
 echo "  Ambiente: $ENVIRONMENT"
-echo "  Backend:  http://$([ "$ENVIRONMENT" == "production" ] && echo "0.0.0.0" || echo "localhost"):8000"
-echo "  API Docs: http://$([ "$ENVIRONMENT" == "production" ] && echo "0.0.0.0" || echo "localhost"):8000/docs"
+echo "  Backend:  http://$([ "$ENVIRONMENT" == "production" ] && echo "0.0.0.0" || echo "localhost"):$BACKEND_PORT"
+echo "  API Docs: http://$([ "$ENVIRONMENT" == "production" ] && echo "0.0.0.0" || echo "localhost"):$BACKEND_PORT/docs"
 
 if [ "$ENVIRONMENT" == "development" ]; then
-    echo "  Frontend: http://localhost:5173"
+    echo "  Frontend: http://localhost:$FRONTEND_PORT"
 fi
 
 echo ""

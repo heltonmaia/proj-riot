@@ -62,18 +62,18 @@ fi
 echo ""
 echo "🧹 Limpando processos órfãos nas portas..."
 
-# Porta 8000 (backend)
-PID_8000=$(lsof -t -i:8000 2>/dev/null)
-if [ ! -z "$PID_8000" ]; then
-    kill -9 $PID_8000 2>/dev/null
-    echo -e "${GREEN}✓ Processo órfão na porta 8000 terminado${NC}"
+# Porta 8001 (backend R-IoT)
+PID_8001=$(lsof -t -i:8001 2>/dev/null)
+if [ ! -z "$PID_8001" ]; then
+    kill -9 $PID_8001 2>/dev/null
+    echo -e "${GREEN}✓ Processo órfão na porta 8001 terminado${NC}"
 fi
 
-# Porta 5173 (frontend)
-PID_5173=$(lsof -t -i:5173 2>/dev/null)
-if [ ! -z "$PID_5173" ]; then
-    kill -9 $PID_5173 2>/dev/null
-    echo -e "${GREEN}✓ Processo órfão na porta 5173 terminado${NC}"
+# Porta 5174 (frontend R-IoT)
+PID_5174=$(lsof -t -i:5174 2>/dev/null)
+if [ ! -z "$PID_5174" ]; then
+    kill -9 $PID_5174 2>/dev/null
+    echo -e "${GREEN}✓ Processo órfão na porta 5174 terminado${NC}"
 fi
 
 # Limpa arquivo de ambiente

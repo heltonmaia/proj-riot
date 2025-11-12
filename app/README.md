@@ -29,8 +29,8 @@ app/
 **Desenvolvimento (Local):**
 ```bash
 ./start.sh dev
-# Frontend: http://localhost:5173
-# Backend:  http://localhost:8000
+# Frontend: http://localhost:5174
+# Backend:  http://localhost:8001
 ```
 
 **Produção (Server):**
