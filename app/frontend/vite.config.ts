@@ -8,8 +8,14 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 5174,
         host: '0.0.0.0',
-        strictPort: true, // Falha se a porta estiver ocupada ao invés de escolher outra
+        strictPort: true,
+        allowedHosts: [
+          'localhost',
+          '127.0.0.1',
+          'playground.heltonmaia.com'
+        ]
       },
+      base: '/riot/', // Base path para servir através do nginx em /riot/
       plugins: [react()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
