@@ -3,6 +3,7 @@ import type { Animal, Herd, ChatMessage, UserLocation } from '../types';
 import { askQuestion } from '../services/geminiService';
 import { ChatBotIcon, SendIcon } from './Icons';
 import { AnimalStatus } from '../types';
+import { useGeminiConfig } from '../contexts/GeminiConfigContext';
 
 interface ChatPanelProps {
   animals: Animal[];
@@ -54,6 +55,8 @@ const parseMarkdownToHTML = (text: string): string => {
 
 
 const ChatPanel: React.FC<ChatPanelProps> = ({ animals, herds, selectedAnimal, isMobile }) => {
+  const { config } = useGeminiConfig();
+
   const [messages, setMessages] = useState<ChatMessage[]>(() => {
     try {
         const savedMessages = sessionStorage.getItem('chatHistory');
@@ -184,7 +187,13 @@ ${historyContext}`;
 
     try {
       const context = generateContext();
-      const { text, sources } = await askQuestion(input, context, userLocation);
+      console.log('Configuração do Gemini:', {
+        model: config.model,
+        temperature: config.temperature,
+        hasApiKey: !!config.apiKey,
+        apiKeyPrefix: config.apiKey?.substring(0, 10) + '...'
+      });
+      const { text, sources } = await askQuestion(input, context, userLocation, config);
       const botMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
         text,

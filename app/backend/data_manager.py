@@ -1,5 +1,6 @@
 import json
 import random
+import os
 from pathlib import Path
 from typing import List, Dict
 from models import Animal, Herd, AnimalStatus, Location
@@ -12,7 +13,15 @@ class DataManager:
         self.data_file = Path(__file__).parent / data_file
         self.animals: List[Animal] = []
         self.herds: List[Herd] = []
+        self.videos_dir = Path(__file__).parent / "videos"
+        self.available_videos = self._get_available_videos()
         self._load_data()
+
+    def _get_available_videos(self) -> List[str]:
+        """Retorna lista de vídeos disponíveis na pasta videos/"""
+        if not self.videos_dir.exists():
+            return []
+        return [f for f in os.listdir(self.videos_dir) if f.endswith(('.mp4', '.webm', '.ogg'))]
 
     def _load_data(self):
         """Carrega dados do arquivo JSON"""
@@ -45,6 +54,10 @@ class DataManager:
 
             # Cria o objeto Animal
             animal = Animal(**animal_data)
+
+            # Associa vídeo aleatório para animais do Rebanho Jundiaí (herdId=4)
+            if animal.herdId == 4 and self.available_videos:
+                animal.videoFilename = random.choice(self.available_videos)
 
             # Verifica alertas iniciais
             animal = self._check_alerts(animal)

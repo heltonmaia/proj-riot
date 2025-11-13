@@ -6,6 +6,7 @@ import StatsPanel from './components/StatsPanel';
 import ChatPanel from './components/ChatPanel';
 import AnimalDetailPanel from './components/AnimalDetailPanel';
 import HerdPanel from './components/HerdPanel';
+import SettingsPanel from './components/SettingsPanel';
 import { ChevronLeftIcon, ChevronRightIcon } from './components/Icons';
 import Login from './components/Login';
 import BottomNav from './components/BottomNav';
@@ -32,9 +33,10 @@ const App: React.FC = () => {
   const [isLeftPanelCollapsed, setIsLeftPanelCollapsed] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [mobileView, setMobileView] = useState<'dashboard' | 'map' | 'chat'>('dashboard');
-  
+  const [activeTab, setActiveTab] = useState<'monitoring' | 'settings'>('monitoring');
+
   const isMobile = useIsMobile();
-  
+
   const HERD_AREA_COLORS = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728'];
 
   const handleSelectAnimal = (animal: Animal) => {
@@ -70,51 +72,99 @@ const App: React.FC = () => {
   if (isMobile) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', fontFamily: 'sans-serif', backgroundColor: '#f0f2f5', color: '#333' }}>
-        <header style={{ padding: '0.75rem 1rem', flexShrink: 0, display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', borderBottom: '1px solid #ddd', zIndex: 10 }}>
-          <h1 style={{ margin: 0, fontSize: '1.2rem' }}>R-IoT</h1>
-           <button
-                onClick={handleLogout}
-                aria-label="Sair da aplicação"
-                style={{
-                    background: 'transparent',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    padding: '0.3rem 0.6rem',
-                    cursor: 'pointer',
-                    fontSize: '0.8rem',
-                    color: '#dc3545',
-                }}
-              >
-                Sair
-              </button>
+        <header style={{ flexShrink: 0, backgroundColor: 'white', borderBottom: '1px solid #ddd', zIndex: 10 }}>
+          <div style={{ padding: '0.75rem 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h1 style={{ margin: 0, fontSize: '1.2rem' }}>R-IoT</h1>
+            <button
+              onClick={handleLogout}
+              aria-label="Sair da aplicação"
+              style={{
+                background: 'transparent',
+                border: '1px solid #ddd',
+                borderRadius: '4px',
+                padding: '0.3rem 0.6rem',
+                cursor: 'pointer',
+                fontSize: '0.8rem',
+                color: '#dc3545',
+              }}
+            >
+              Sair
+            </button>
+          </div>
+
+          {/* Tabs */}
+          <div style={{ display: 'flex', borderTop: '1px solid #eee' }}>
+            <button
+              onClick={() => setActiveTab('monitoring')}
+              style={{
+                flex: 1,
+                padding: '0.75rem',
+                border: 'none',
+                backgroundColor: activeTab === 'monitoring' ? '#0056b3' : 'transparent',
+                color: activeTab === 'monitoring' ? 'white' : '#666',
+                fontWeight: activeTab === 'monitoring' ? 'bold' : 'normal',
+                cursor: 'pointer',
+                fontSize: '0.9rem',
+                transition: 'all 0.2s',
+              }}
+            >
+              Monitoramento
+            </button>
+            <button
+              onClick={() => setActiveTab('settings')}
+              style={{
+                flex: 1,
+                padding: '0.75rem',
+                border: 'none',
+                backgroundColor: activeTab === 'settings' ? '#0056b3' : 'transparent',
+                color: activeTab === 'settings' ? 'white' : '#666',
+                fontWeight: activeTab === 'settings' ? 'bold' : 'normal',
+                cursor: 'pointer',
+                fontSize: '0.9rem',
+                transition: 'all 0.2s',
+              }}
+            >
+              Configurações
+            </button>
+          </div>
         </header>
 
         <main style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
-          {mobileView === 'dashboard' && (
-             <div style={{ height: '100%', overflowY: 'auto', padding: '1rem' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <StatsPanel animals={animals} />
-                  {selectedAnimal ? (
-                     <AnimalDetailPanel animal={selectedAnimal} herds={herds} onClose={handleCloseDetail} />
-                  ) : (
-                    <HerdPanel herds={herds} animals={animals} herdColors={HERD_AREA_COLORS} />
-                  )}
+          {activeTab === 'monitoring' && (
+            <>
+              {mobileView === 'dashboard' && (
+                <div style={{ height: '100%', overflowY: 'auto', padding: '1rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    <StatsPanel animals={animals} />
+                    {selectedAnimal ? (
+                      <AnimalDetailPanel animal={selectedAnimal} herds={herds} onClose={handleCloseDetail} />
+                    ) : (
+                      <HerdPanel herds={herds} animals={animals} herdColors={HERD_AREA_COLORS} />
+                    )}
+                  </div>
                 </div>
-            </div>
+              )}
+              {mobileView === 'map' && (
+                <div style={{ height: '100%', width: '100%'}}>
+                  <MapPanel animals={animals} herds={herds} onSelectAnimal={handleSelectAnimal} selectedAnimal={selectedAnimal} herdColors={HERD_AREA_COLORS} onDeselectAnimal={handleCloseDetail} />
+                </div>
+              )}
+              {mobileView === 'chat' && (
+                <div style={{ height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <ChatPanel animals={animals} herds={herds} selectedAnimal={selectedAnimal} isMobile={true} />
+                </div>
+              )}
+            </>
           )}
-          {mobileView === 'map' && (
-             <div style={{ height: '100%', width: '100%'}}>
-              <MapPanel animals={animals} herds={herds} onSelectAnimal={handleSelectAnimal} selectedAnimal={selectedAnimal} herdColors={HERD_AREA_COLORS} onDeselectAnimal={handleCloseDetail} />
-            </div>
-          )}
-          {mobileView === 'chat' && (
-            <div style={{ height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <ChatPanel animals={animals} herds={herds} selectedAnimal={selectedAnimal} isMobile={true} />
+
+          {activeTab === 'settings' && (
+            <div style={{ height: '100%', overflowY: 'auto' }}>
+              <SettingsPanel isMobile={true} />
             </div>
           )}
         </main>
 
-        <BottomNav activeView={mobileView} setView={setMobileView} />
+        {activeTab === 'monitoring' && <BottomNav activeView={mobileView} setView={setMobileView} />}
       </div>
     );
   }
@@ -140,48 +190,93 @@ const App: React.FC = () => {
             flexDirection: 'column',
             boxSizing: 'border-box',
           }}>
-            <header style={{ padding: '1rem', flexShrink: 0, display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #eee' }}>
-              <h1 style={{ margin: 0, fontSize: '1.5rem', whiteSpace: 'nowrap' }}>R-IoT Dashboard</h1>
-              <button
-                onClick={handleLogout}
-                aria-label="Sair da aplicação"
-                style={{
-                    background: 'transparent',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    padding: '0.4rem 0.8rem',
+            <header style={{ flexShrink: 0, borderBottom: '1px solid #eee' }}>
+              <div style={{ padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h1 style={{ margin: 0, fontSize: '1.5rem', whiteSpace: 'nowrap' }}>R-IoT Dashboard</h1>
+                <button
+                  onClick={handleLogout}
+                  aria-label="Sair da aplicação"
+                  style={{
+                      background: 'transparent',
+                      border: '1px solid #ddd',
+                      borderRadius: '4px',
+                      padding: '0.4rem 0.8rem',
+                      cursor: 'pointer',
+                      fontSize: '0.9rem',
+                      color: '#dc3545',
+                      fontWeight: 'bold',
+                      transition: 'all 0.2s'
+                  }}
+                  onMouseOver={(e) => {
+                      e.currentTarget.style.backgroundColor = '#dc3545';
+                      e.currentTarget.style.color = '#fff';
+                      e.currentTarget.style.borderColor = '#dc3545';
+                  }}
+                  onMouseOut={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = '#dc3545';
+                      e.currentTarget.style.borderColor = '#ddd';
+                  }}
+                >
+                  Sair
+                </button>
+              </div>
+
+              {/* Tabs */}
+              <div style={{ display: 'flex', borderTop: '1px solid #eee' }}>
+                <button
+                  onClick={() => setActiveTab('monitoring')}
+                  style={{
+                    flex: 1,
+                    padding: '0.75rem',
+                    border: 'none',
+                    backgroundColor: activeTab === 'monitoring' ? '#0056b3' : 'transparent',
+                    color: activeTab === 'monitoring' ? 'white' : '#666',
+                    fontWeight: activeTab === 'monitoring' ? 'bold' : 'normal',
                     cursor: 'pointer',
-                    fontSize: '0.9rem',
-                    color: '#dc3545',
-                    fontWeight: 'bold',
-                    transition: 'all 0.2s'
-                }}
-                onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = '#dc3545';
-                    e.currentTarget.style.color = '#fff';
-                    e.currentTarget.style.borderColor = '#dc3545';
-                }}
-                onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.color = '#dc3545';
-                    e.currentTarget.style.borderColor = '#ddd';
-                }}
-              >
-                Sair
-              </button>
+                    fontSize: '0.95rem',
+                    transition: 'all 0.2s',
+                  }}
+                >
+                  Monitoramento
+                </button>
+                <button
+                  onClick={() => setActiveTab('settings')}
+                  style={{
+                    flex: 1,
+                    padding: '0.75rem',
+                    border: 'none',
+                    backgroundColor: activeTab === 'settings' ? '#0056b3' : 'transparent',
+                    color: activeTab === 'settings' ? 'white' : '#666',
+                    fontWeight: activeTab === 'settings' ? 'bold' : 'normal',
+                    cursor: 'pointer',
+                    fontSize: '0.95rem',
+                    transition: 'all 0.2s',
+                  }}
+                >
+                  Configurações
+                </button>
+              </div>
             </header>
 
             <div style={{ flex: 1, minHeight: 0, padding: '1rem', boxSizing: 'border-box', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ flexShrink: 0 }}>
-                {selectedAnimal ? (
-                    <AnimalDetailPanel animal={selectedAnimal} herds={herds} onClose={handleCloseDetail} />
-                ) : (
-                    <HerdPanel herds={herds} animals={animals} herdColors={HERD_AREA_COLORS} />
-                )}
-              </div>
-              <div style={{ marginTop: 'auto' }}>
-                <ChatPanel animals={animals} herds={herds} selectedAnimal={selectedAnimal} isMobile={false} />
-              </div>
+              {activeTab === 'monitoring' && (
+                <>
+                  <div style={{ flexShrink: 0 }}>
+                    {selectedAnimal ? (
+                        <AnimalDetailPanel animal={selectedAnimal} herds={herds} onClose={handleCloseDetail} />
+                    ) : (
+                        <HerdPanel herds={herds} animals={animals} herdColors={HERD_AREA_COLORS} />
+                    )}
+                  </div>
+                  <div style={{ marginTop: 'auto' }}>
+                    <ChatPanel animals={animals} herds={herds} selectedAnimal={selectedAnimal} isMobile={false} />
+                  </div>
+                </>
+              )}
+              {activeTab === 'settings' && (
+                <SettingsPanel isMobile={false} />
+              )}
             </div>
           </div>
         </div>

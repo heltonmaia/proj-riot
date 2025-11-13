@@ -46,6 +46,7 @@ export interface Animal {
   age: number; // in months
   weight: number; // in kg
   history?: AnimalHistoryRecord[];
+  videoFilename?: string; // Nome do arquivo de vídeo do animal
 }
 
 export interface UserLocation {

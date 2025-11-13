@@ -1,8 +1,10 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, StreamingResponse
 from contextlib import asynccontextmanager
 import asyncio
 import os
+from pathlib import Path
 from typing import List
 
 from models import Animal, Herd, DataResponse, AnimalsResponse, HerdsResponse
@@ -147,6 +149,67 @@ async def health_check():
         "animals_count": len(data_manager.get_animals()) if data_manager else 0,
         "herds_count": len(data_manager.get_herds()) if data_manager else 0
     }
+
+
+@app.get("/api/videos/{filename}")
+async def get_video(filename: str, request: Request):
+    """Serve vídeo de animal com suporte a range requests para streaming"""
+    videos_dir = Path(__file__).parent / "videos"
+    video_path = videos_dir / filename
+
+    # Verifica se o arquivo existe
+    if not video_path.exists():
+        raise HTTPException(status_code=404, detail=f"Video {filename} not found")
+
+    # Verifica se é um arquivo de vídeo válido
+    if not video_path.suffix.lower() in ['.mp4', '.webm', '.ogg']:
+        raise HTTPException(status_code=400, detail="Invalid video format")
+
+    # Tamanho do arquivo
+    file_size = video_path.stat().st_size
+
+    # Verifica se há range request
+    range_header = request.headers.get("range")
+
+    if range_header:
+        # Parse range header (formato: "bytes=start-end")
+        range_match = range_header.replace("bytes=", "").split("-")
+        start = int(range_match[0]) if range_match[0] else 0
+        end = int(range_match[1]) if len(range_match) > 1 and range_match[1] else file_size - 1
+
+        # Lê apenas o chunk solicitado
+        chunk_size = end - start + 1
+
+        def iterfile():
+            with open(video_path, "rb") as video_file:
+                video_file.seek(start)
+                remaining = chunk_size
+                while remaining > 0:
+                    chunk = video_file.read(min(8192, remaining))
+                    if not chunk:
+                        break
+                    remaining -= len(chunk)
+                    yield chunk
+
+        headers = {
+            "Content-Range": f"bytes {start}-{end}/{file_size}",
+            "Accept-Ranges": "bytes",
+            "Content-Length": str(chunk_size),
+            "Content-Type": "video/mp4",
+        }
+
+        return StreamingResponse(
+            iterfile(),
+            status_code=206,
+            headers=headers
+        )
+
+    # Sem range request, retorna o arquivo completo
+    return FileResponse(
+        path=video_path,
+        media_type="video/mp4",
+        headers={"Accept-Ranges": "bytes"}
+    )
 
 
 if __name__ == "__main__":

@@ -41,6 +41,7 @@ class Animal(BaseModel):
     age: int  # em meses
     weight: float  # em kg
     history: Optional[List[AnimalHistoryRecord]] = None
+    videoFilename: Optional[str] = None  # Nome do arquivo de vídeo do animal
 
 
 class Herd(BaseModel):
