@@ -2,7 +2,9 @@
  * Configurações da aplicação
  */
 
-// URL base da API do backend (porta 8001 - não conflita com neonatal que usa 8000)
+// URL base da API do backend
+// Em produção: usa caminho relativo /riot (mesmo domínio via nginx)
+// Em desenvolvimento: usa http://localhost:8001
 export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8001';
 
 // Endpoints da API

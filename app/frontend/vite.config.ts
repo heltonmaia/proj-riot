@@ -4,9 +4,11 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
+    const isProduction = mode === 'production';
 
     return {
-      base: '/riot/', // Base path para funcionar com nginx em /riot/
+      // Base path: /riot/ em produção, / em desenvolvimento
+      base: isProduction ? '/riot/' : '/',
       server: {
         port: 5174,
         host: '0.0.0.0',
