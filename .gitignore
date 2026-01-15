@@ -36,6 +36,7 @@ venv.bak/
 *.env
 .env.*
 !.env.example
+.environment
 config.yaml
 config.yml
 
@@ -129,3 +130,13 @@ docs/_build/
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# AI Dataset specific rules
+AI/dataset/*
+!AI/dataset/
+!AI/dataset/*.py
+!AI/dataset/*.sh
+!AI/dataset/*.xlsx
+!AI/dataset/*.csv
+!AI/dataset/README.md
+!AI/dataset/.gitkeep
