@@ -19,7 +19,9 @@ class Menu:
         # Inicializar analisador se API key estiver configurada
         api_key = self.config_manager.get('api_key')
         if api_key:
-            self.video_analyzer = VideoAnalyzer(api_key)
+            model_name = self.config_manager.get('model', 'gemini-3-pro-preview')
+            prompt = self.config_manager.get_prompt('video_analysis')
+            self.video_analyzer = VideoAnalyzer(api_key, model_name, prompt)
     
     def show_main_menu(self):
         """Exibe o menu principal."""
@@ -67,13 +69,49 @@ class Menu:
         new_key = input("Digite sua nova API Key do Google Gemini: ").strip()
         if new_key:
             if self.config_manager.update_api_key(new_key):
-                self.video_analyzer = VideoAnalyzer(new_key)
+                model_name = self.config_manager.get('model', 'gemini-3-pro-preview')
+                prompt = self.config_manager.get_prompt('video_analysis')
+                self.video_analyzer = VideoAnalyzer(new_key, model_name, prompt)
                 print("API Key configurada com sucesso!")
             else:
                 print("Erro ao salvar API Key.")
         else:
             print("Operação cancelada.")
     
+    def _select_video_from_list(self, video_dir):
+        """Lista vídeos em um diretório e permite seleção."""
+        if not os.path.exists(video_dir):
+            print(f"Erro: Diretório {video_dir} não encontrado.")
+            return None
+            
+        video_extensions = ['*.mp4', '*.avi', '*.mov', '*.mkv']
+        video_files = []
+        for ext in video_extensions:
+            video_files.extend(sorted(Path(video_dir).glob(ext)))
+            
+        if not video_files:
+            print(f"Nenhum vídeo encontrado em {video_dir}")
+            return None
+            
+        print(f"\n=== Selecionar Vídeo de {video_dir} ===")
+        for i, video in enumerate(video_files, 1):
+            print(f"{i}. {video.name}")
+        print("0. Cancelar / Digitar caminho manualmente")
+        
+        while True:
+            try:
+                choice = input("\nEscolha um vídeo (número): ").strip()
+                if choice == '0':
+                    return None
+                    
+                idx = int(choice) - 1
+                if 0 <= idx < len(video_files):
+                    return str(video_files[idx])
+                else:
+                    print("Opção inválida.")
+            except ValueError:
+                print("Por favor, digite um número válido.")
+                
     def analyze_single_video(self):
         """Analisa um vídeo individual."""
         if not self.video_analyzer:
@@ -81,15 +119,29 @@ class Menu:
             return
         
         print("\n=== Analisar Vídeo Individual ===")
-        video_path = input("Digite o caminho do vídeo: ").strip()
         
+        # Tentar listar vídeos do diretório configurado
+        default_dir = self.config_manager.get('video_dir')
+        video_path = self._select_video_from_list(default_dir)
+        
+        if not video_path:
+            video_path = input("Digite o caminho do vídeo: ").strip()
+        
+        if not video_path:
+            print("Operação cancelada.")
+            return
+            
         if not os.path.exists(video_path):
             print("Erro: Arquivo não encontrado.")
             return
         
         output_path = input("Caminho para salvar legendas (Enter para padrão): ").strip()
         if not output_path:
-            output_path = None
+            # Usar diretório de saída configurado
+            output_dir = self.config_manager.get('output_dir', 'results')
+            os.makedirs(output_dir, exist_ok=True)
+            base_name = os.path.splitext(os.path.basename(video_path))[0]
+            output_path = os.path.join(output_dir, f"{base_name}_legendas.srt")
         
         print(f"\nAnalisando vídeo: {os.path.basename(video_path)}")
         result = self.video_analyzer.analyze_video(video_path, output_path)

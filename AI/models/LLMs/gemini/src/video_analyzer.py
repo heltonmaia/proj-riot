@@ -7,69 +7,14 @@ from PIL import Image
 import io
 
 class VideoAnalyzer:
-    def __init__(self, api_key):
+    def __init__(self, api_key, model_name='gemini-3-pro-preview', prompt_template=None):
         """Inicializa o analisador de vídeos com a API key do Gemini."""
         self.api_key = api_key
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-2.5-flash-preview-05-20')
+        self.model = genai.GenerativeModel(model_name)
         
-        # Prompt para análise de vídeos de animais de fazenda
-        self.prompt_template = """
-        Analise detalhadamente este vídeo de animal(is) de fazenda. Forneça:
-
-        1. **Descrição geral da cena:**
-           - Ambiente (pasto, curral, estábulo, etc.)
-           - Período do dia (manhã, tarde, noite)
-           - Condições climáticas visíveis
-           - Quantidade de animais presentes
-
-        2. **Identificação dos animais:**
-           - Espécie(s)
-           - Raça(s) se identificáveis
-           - Características físicas notáveis
-           - Estimativa de idade (filhote, jovem, adulto)
-
-        3. **Análise comportamental:**
-           - Comportamentos naturais observados (alimentação, descanso, social, etc.)
-           - Linguagem corporal e postura
-           - Vocalizações (se houver áudio)
-           - Interações com outros animais ou humanos
-           - Indicadores de bem-estar ou estresse
-
-        4. **Interpretação contextual:**
-           - Significado etológico dos comportamentos observados
-           - Possíveis motivações para as ações observadas
-           - Relevância para manejo e bem-estar animal
-
-        5. **Importante: Gere APENAS legendas em formato .srt para todo o vídeo:**
-           - Use linguagem clara e acessível
-           - As legendas devem explicar o que está acontecendo e incluir informações educativas sobre o comportamento animal
-           - Formate as legendas no padrão .srt com timestamps corretos
-           - A duração do vídeo é de {duration} segundos
-           - Mantenha as frases concisas (máximo 42 caracteres por linha)
-           - Cada bloco de legenda deve permanecer visível entre 3-7 segundos
-           - Distribua as legendas uniformemente ao longo do vídeo
-           - NÃO INCLUA NENHUM TEXTO EXPLICATIVO ALÉM DO FORMATO SRT
-
-        Exemplo formato .srt:
-        ```
-        1
-        00:00:01,000 --> 00:00:04,000
-        O gado nelore se aproxima do bebedouro.
-
-        2
-        00:00:04,500 --> 00:00:09,000
-        Comportamento típico: os animais mais 
-        dominantes bebem primeiro.
-
-        3
-        00:00:09,500 --> 00:00:13,500
-        O ato de beber ocorre em sessões curtas,
-        intercaladas com observação do ambiente.
-        ```
-
-        FORNEÇA APENAS O ARQUIVO SRT, SEM TEXTO ADICIONAL.
-        """
+        # Prompt para análise de vídeos
+        self.prompt_template = prompt_template or "Descreva este vídeo."
 
     def extract_frames(self, video_path, num_frames=8):
         """Extrai frames representativos do vídeo usando OpenCV."""

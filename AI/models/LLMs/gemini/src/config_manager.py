@@ -5,14 +5,17 @@ from pathlib import Path
 class ConfigManager:
     def __init__(self, config_file="config.yaml"):
         """Inicializa o gerenciador de configurações."""
+        self.config_dir = os.path.dirname(os.path.abspath(config_file))
         self.config_file = config_file
         self.config = self.load_config()
+        self.prompts = self.load_prompts()
     
     def load_config(self):
         """Carrega a configuração do arquivo YAML."""
         default_config = {
             'api_key': '',
-            'model': 'gemini-2.5-flash-preview-05-20',
+            'model': 'gemini-3-pro-preview',
+            'prompts_file': 'prompts.yaml',
             'video_dir': 'videos/',
             'output_dir': 'results/',
             'tmp_dir': 'tmp/',
@@ -31,6 +34,26 @@ class ConfigManager:
         
         return default_config
     
+    def load_prompts(self):
+        """Carrega os prompts do arquivo YAML."""
+        prompts_file = self.config.get('prompts_file', 'prompts.yaml')
+        # Tenta caminho relativo ao config.yaml se não for absoluto
+        if not os.path.isabs(prompts_file):
+            prompts_path = os.path.join(self.config_dir, prompts_file)
+        else:
+            prompts_path = prompts_file
+            
+        if os.path.exists(prompts_path):
+            try:
+                with open(prompts_path, 'r', encoding='utf-8') as f:
+                    return yaml.safe_load(f) or {}
+            except Exception as e:
+                print(f"Erro ao carregar prompts de {prompts_path}: {e}")
+        else:
+            print(f"Aviso: Arquivo de prompts não encontrado em {prompts_path}")
+            
+        return {}
+
     def save_config(self):
         """Salva a configuração atual no arquivo YAML."""
         try:
@@ -41,6 +64,10 @@ class ConfigManager:
         except Exception as e:
             print(f"Erro ao salvar configuração: {e}")
             return False
+
+    def get_prompt(self, key, default=""):
+        """Obtém um prompt pelo nome."""
+        return self.prompts.get(key, default)
     
     def get(self, key, default=None):
         """Obtém um valor da configuração."""
