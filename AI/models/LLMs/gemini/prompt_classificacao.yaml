@@ -1,0 +1,22 @@
+classification: |
+  Analise esta imagem (primeiro frame do vídeo) e identifique a presença e quantidade de animais das seguintes classes:
+  - Bezerro
+  - Vaca
+  - Touro
+
+  Instruções:
+  1. Identifique todos os animais visíveis na cena.
+  2. Classifique cada um nas categorias acima.
+  3. Retorne o resultado ESTRITAMENTE em formato JSON.
+  4. Não inclua markdown, crases ou qualquer texto fora do JSON.
+
+  Formato de saída esperado:
+  {
+    "contagem": {
+      "bezerro": 0,
+      "vaca": 0,
+      "touro": 0
+    },
+    "total_animais": 0,
+    "observacoes": "Breve descrição do cenário se necessário"
+  }

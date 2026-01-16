@@ -14,8 +14,9 @@ class ConfigManager:
         """Carrega a configuração do arquivo YAML."""
         default_config = {
             'api_key': '',
-            'model': 'gemini-3-pro-preview',
+            'model': 'gemini-2.5-flash',
             'prompts_file': 'prompts.yaml',
+            'classification_prompt_file': 'prompt_classificacao.yaml',
             'video_dir': 'videos/',
             'output_dir': 'results/',
             'tmp_dir': 'tmp/',
@@ -35,22 +36,36 @@ class ConfigManager:
         return default_config
     
     def load_prompts(self):
-        """Carrega os prompts do arquivo YAML."""
+        """Carrega os prompts dos arquivos YAML."""
+        prompts = {}
+        
+        # Carregar prompts padrão
         prompts_file = self.config.get('prompts_file', 'prompts.yaml')
-        # Tenta caminho relativo ao config.yaml se não for absoluto
-        if not os.path.isabs(prompts_file):
-            prompts_path = os.path.join(self.config_dir, prompts_file)
+        prompts.update(self._load_yaml_file(prompts_file))
+        
+        # Carregar prompts de classificação
+        classification_file = self.config.get('classification_prompt_file', 'prompt_classificacao.yaml')
+        prompts.update(self._load_yaml_file(classification_file))
+        
+        return prompts
+        
+    def _load_yaml_file(self, filename):
+        """Helper para carregar arquivo YAML com caminho relativo/absoluto."""
+        if not os.path.isabs(filename):
+            path = os.path.join(self.config_dir, filename)
         else:
-            prompts_path = prompts_file
+            path = filename
             
-        if os.path.exists(prompts_path):
+        if os.path.exists(path):
             try:
-                with open(prompts_path, 'r', encoding='utf-8') as f:
+                with open(path, 'r', encoding='utf-8') as f:
                     return yaml.safe_load(f) or {}
             except Exception as e:
-                print(f"Erro ao carregar prompts de {prompts_path}: {e}")
+                print(f"Erro ao carregar prompts de {path}: {e}")
         else:
-            print(f"Aviso: Arquivo de prompts não encontrado em {prompts_path}")
+            # Silenciar aviso se for apenas o arquivo padrão que ainda não existe
+            if filename not in ['prompts.yaml', 'prompt_classificacao.yaml']:
+                print(f"Aviso: Arquivo de prompts não encontrado em {path}")
             
         return {}
 

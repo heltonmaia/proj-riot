@@ -1,0 +1,9 @@
+{
+  "contagem": {
+    "bezerro": 0,
+    "vaca": 3,
+    "touro": 0
+  },
+  "total_animais": 3,
+  "observacoes": "Três bovinos adultos são visíveis em um pasto. Um bovino preto em primeiro plano, e outros dois bovinos adultos ao fundo, um preto e um marrom claro, ambos pastando."
+}

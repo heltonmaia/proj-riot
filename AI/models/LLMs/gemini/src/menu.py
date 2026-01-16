@@ -8,6 +8,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from src.config_manager import ConfigManager
 from src.video_analyzer import VideoAnalyzer
 from src.video_merger import VideoMerger
+import time
 
 class Menu:
     def __init__(self):
@@ -36,9 +37,10 @@ class Menu:
             print("5. Processar vídeos em lote (análise + legendas, gera os vídeos resultantes)")
             print("6. Mesclar vídeos em apenas um para análises futuras")
             print("7. Sair")
+            print("8. Classificação dos Animais (JSON)")
             print("="*50)
             
-            choice = input("\nEscolha uma opção (1-7): ").strip()
+            choice = input("\nEscolha uma opção (1-8): ").strip()
             
             if choice == '1':
                 self.configure_api_key()
@@ -55,6 +57,8 @@ class Menu:
             elif choice == '7':
                 print("Saindo...")
                 break
+            elif choice == '8':
+                self.classify_animals()
             else:
                 print("Opção inválida. Tente novamente.")
     
@@ -302,4 +306,118 @@ class Menu:
                     success_count += 1
                     print(f"Vídeo processado: {output_path.name}")
         
-        print(f"\nProcessamento em lote concluído: {success_count}/{len(video_files)} vídeos processados com sucesso.") 
+        print(f"\nProcessamento em lote concluído: {success_count}/{len(video_files)} vídeos processados com sucesso.")
+    
+    def classify_animals(self):
+        """Menu de classificação de animais."""
+        while True:
+            print("\n" + "-"*40)
+            print("   CLASSIFICAÇÃO DE ANIMAIS (JSON)")
+            print("-"*40)
+            print("1. Analisar vídeo individual")
+            print("2. Analisar todos os vídeos da pasta")
+            print("0. Voltar ao menu principal")
+            print("-"*40)
+            
+            choice = input("\nEscolha uma opção (0-2): ").strip()
+            
+            if choice == '1':
+                self._classify_single_video()
+            elif choice == '2':
+                self._classify_directory_videos()
+            elif choice == '0':
+                break
+            else:
+                print("Opção inválida.")
+
+    def _classify_single_video(self):
+        """Classifica animais em um vídeo individual."""
+        if not self.video_analyzer:
+            print("Erro: API Key não configurada. Configure primeiro no menu.")
+            return
+        
+        print("\n=== Classificação Individual ===")
+        
+        # Tentar listar vídeos do diretório configurado
+        default_dir = self.config_manager.get('video_dir')
+        video_path = self._select_video_from_list(default_dir)
+        
+        if not video_path:
+            video_path = input("Digite o caminho do vídeo: ").strip()
+        
+        if not video_path or not os.path.exists(video_path):
+            print("Operação cancelada ou arquivo não encontrado.")
+            return
+
+        self._run_classification(video_path)
+
+    def _classify_directory_videos(self):
+        """Classifica animais em todos os vídeos de um diretório."""
+        if not self.video_analyzer:
+            print("Erro: API Key não configurada. Configure primeiro no menu.")
+            return
+            
+        print("\n=== Classificação em Lote (Diretório) ===")
+        video_dir = input(f"Diretório de vídeos (Enter para {self.config_manager.get('video_dir')}): ").strip()
+        if not video_dir:
+            video_dir = self.config_manager.get('video_dir')
+        
+        if not os.path.exists(video_dir):
+            print("Erro: Diretório não encontrado.")
+            return
+            
+        # Encontrar vídeos
+        video_extensions = ['*.mp4', '*.avi', '*.mov', '*.mkv']
+        video_files = []
+        for ext in video_extensions:
+            video_files.extend(Path(video_dir).glob(ext))
+            
+        if not video_files:
+            print("Nenhum vídeo encontrado no diretório.")
+            return
+            
+        print(f"Encontrados {len(video_files)} vídeos.")
+        proceed = input("Deseja iniciar a classificação em lote? (s/n): ").strip().lower()
+        if proceed != 's':
+            return
+            
+        success_count = 0
+        failed_videos = []
+        
+        for i, video_file in enumerate(video_files):
+            print(f"\n[{i+1}/{len(video_files)}] Classificando: {video_file.name}")
+            if self._run_classification(str(video_file)):
+                success_count += 1
+            else:
+                failed_videos.append(video_file.name)
+            
+            # Pequeno delay para evitar rate limiting (além do retry interno)
+            time.sleep(2)
+                
+        print(f"\nProcessamento concluído: {success_count}/{len(video_files)} vídeos classificados.")
+        if failed_videos:
+            print("\nVídeos que falharam:")
+            for v in failed_videos:
+                print(f"- {v}")
+
+    def _run_classification(self, video_path):
+        """Método auxiliar para executar a classificação em um arquivo."""
+        # Configurar diretório de saída para verificação
+        output_dir = self.config_manager.get('output_dir', 'results')
+        os.makedirs(output_dir, exist_ok=True)
+        base_name = os.path.splitext(os.path.basename(video_path))[0]
+        output_path = os.path.join(output_dir, f"{base_name}_classificacao.json")
+
+        # Verificar se já existe para evitar reprocessamento
+        if os.path.exists(output_path):
+            print(f"Arquivo já processado, pulando: {os.path.basename(output_path)}")
+            return True
+
+        # Obter prompt de classificação
+        prompt = self.config_manager.get_prompt('classification')
+        if not prompt:
+            print("Erro: Prompt de classificação não encontrado em prompt_classificacao.yaml")
+            return False
+
+        result = self.video_analyzer.analyze_frame_classification(video_path, output_path, prompt)
+        return result is not None 

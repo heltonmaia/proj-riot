@@ -1,8 +1,10 @@
+
 import os
 import google.generativeai as genai
 import cv2
 import numpy as np
 import re
+import time
 from PIL import Image
 import io
 
@@ -128,4 +130,57 @@ class VideoAnalyzer:
             return output_path
         except Exception as e:
             print(f"Erro ao analisar o vídeo: {e}")
-            return None 
+            return None
+
+    def analyze_frame_classification(self, video_path, output_path=None, prompt_template=None):
+        """
+        Classifica animais no primeiro frame do vídeo e retorna JSON.
+        """
+        print("Extraindo frame inicial...")
+        # Extrair apenas 1 frame
+        frames, duration = self.extract_frames(video_path, num_frames=1)
+        if not frames:
+            print("Falha ao extrair frame do vídeo.")
+            return None
+            
+        print(f"Frame extraído. Iniciando classificação...")
+        
+        # Usar prompt específico ou o padrão da instância
+        prompt = prompt_template or self.prompt_template
+        
+        max_retries = 3
+        retry_delay = 5  # segundos
+        
+        for attempt in range(max_retries):
+            try:
+                # Configurar para JSON se possível via prompt, mas o Gemini Flash pode precisar de instrução explícita
+                response = self.model.generate_content([prompt, frames[0]])
+                
+                json_content = response.text
+                # Limpar markdown ```json ... ``` se houver
+                json_content = re.sub(r'^```json\s*', '', json_content)
+                json_content = re.sub(r'\s*```$', '', json_content)
+                
+                # Determinar o caminho de saída
+                if not output_path:
+                    base_name = os.path.splitext(os.path.basename(video_path))[0]
+                    output_path = f"{base_name}_classificacao.json"
+                
+                # Salvar arquivo JSON
+                with open(output_path, 'w', encoding='utf-8') as f:
+                    f.write(json_content)
+                
+                print(f"Classificação salva com sucesso: {output_path}")
+                return output_path
+                
+            except Exception as e:
+                if "429" in str(e) or "Resource has been exhausted" in str(e):
+                    print(f"Cota de API excedida (429). Tentativa {attempt + 1}/{max_retries}. Aguardando {retry_delay}s...")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # Backoff exponencial
+                else:
+                    print(f"Erro ao classificar animais: {e}")
+                    return None
+        
+        print("Falha após múltiplas tentativas devido a erros de cota.")
+        return None 

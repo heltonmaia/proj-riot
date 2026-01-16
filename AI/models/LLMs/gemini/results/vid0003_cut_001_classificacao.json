@@ -1,0 +1,9 @@
+{
+  "contagem": {
+    "bezerro": 1,
+    "vaca": 1,
+    "touro": 0
+  },
+  "total_animais": 2,
+  "observacoes": "Uma vaca adulta de pelagem escura é visível, sendo amamentada por um bezerro de pelagem escura e branca. Não há touros visíveis na imagem."
+}
