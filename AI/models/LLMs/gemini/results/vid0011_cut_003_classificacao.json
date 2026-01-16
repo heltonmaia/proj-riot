@@ -1,0 +1,9 @@
+{
+  "contagem": {
+    "bezerro": 1,
+    "vaca": 1,
+    "touro": 0
+  },
+  "total_animais": 2,
+  "observacoes": "Uma vaca está amamentando seu bezerro em um ambiente com paredes de azulejo e chão de tijolos ou pavers."
+}
