@@ -1,9 +1,0 @@
-{
-  "contagem": {
-    "bezerro": 0,
-    "vaca": 1,
-    "touro": 0
-  },
-  "total_animais": 1,
-  "observacoes": "Um animal bovino adulto de coloração escura é visível no lado direito da imagem, próximo a um cocho azul, sob uma árvore. Foi classificado como 'vaca' devido à sua aparência geral, embora a distinção exata entre vaca e touro seja difícil sem mais detalhes visuais. Não há outros animais das classes solicitadas."
-}

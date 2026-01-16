@@ -1,22 +1,57 @@
 classification: |
-  Analise esta imagem (primeiro frame do vídeo) e identifique a presença e quantidade de animais das seguintes classes:
-  - Bezerro
-  - Vaca
-  - Touro
+  Analise esta imagem (primeiro frame do vídeo) e forneça uma análise detalhada dos animais presentes, seguindo ESTRITAMENTE as opções listadas abaixo.
 
-  Instruções:
-  1. Identifique todos os animais visíveis na cena.
-  2. Classifique cada um nas categorias acima.
-  3. Retorne o resultado ESTRITAMENTE em formato JSON.
-  4. Não inclua markdown, crases ou qualquer texto fora do JSON.
+  Retorne o resultado APENAS em formato JSON, sem markdown ou texto adicional.
 
-  Formato de saída esperado:
+  ---
+  OPÇÕES VÁLIDAS (Use apenas estas):
+
+  1. **Classe/Categoria**: 
+     - Jovens: Bezerro, Novilha, Novilho, Garrote
+     - Adultos: Vaca, Touro
+  2. **Sexo**: Macho, Fêmea
+  3. **Ambiente** (Base para descricao_ambiente): Pasto, Curral, Estábulo, Sala de ordenha, Corredor de manejo
+  4. **Sinais Clínicos**: Saudável, Magro, Doente, Claudicação, Diarréia, Secreção nasal, Respiração ofegante, Tosse, Lesão de pele
+  5. **Comportamento** (Exemplos): 
+     - Ócio/ Deitado
+     - Andando, em fuga
+     - O bezerro está mamando na vaca
+     - Interação negativa materna – Coice
+     - Vaca se movimentando-Rejeição parcial do bezerro
+     - Bezerro realizando mamada e defecando
+     - Ócio/ Deitado exposto ao sol
+     - Se alimentando
+     - Em pé, piso com lama, se alimentando com feno
+     - Inquietos
+     - Bezerros forrageando
+     - Bebendo água em bebedouro
+     - Ócio em pé (estação)
+     - Amamentando e Andando
+     - Vaca sendo ordenhada mecanicamente
+     - Vaca aguardando ordenha
+
+  ---
+  ESTRUTURA DO JSON:
+
   {
-    "contagem": {
-      "bezerro": 0,
-      "vaca": 0,
-      "touro": 0
+    "descricao_ambiente": "Descreva o cenário e o ambiente observado (ex: Pasto verde, Curral de madeira, etc.)",
+    "animais_identificados": [
+      {
+        "id": 1,
+        "classe": "Uma das opções de Classe (Bezerro, Novilha, Novilho, Garrote, Vaca, Touro)",
+        "sexo": "Macho ou Fêmea",
+        "sinais_clinicos": "Uma das opções de Sinais Clínicos",
+        "comportamento": "Escolha a opção mais adequada da lista ou descreva se for muito diferente",
+        "descricao_animal": "Descrição detalhada do animal (cor, pelagem, características físicas)"
+      }
+    ],
+    "contagem_total": {
+      "Bezerro": 0,
+      "Novilha": 0,
+      "Novilho": 0,
+      "Garrote": 0,
+      "Vaca": 0,
+      "Touro": 0
     },
-    "total_animais": 0,
-    "observacoes": "Breve descrição do cenário se necessário"
+    "observacoes_gerais": "Comentários sobre a cena geral"
   }

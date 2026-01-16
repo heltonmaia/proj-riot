@@ -1,9 +1,54 @@
 {
-  "contagem": {
-    "bezerro": 2,
-    "vaca": 2,
-    "touro": 0
+  "descricao_ambiente": "Curral com piso de terra batida e palha/feno, cercado por estruturas de madeira pintadas de azul. Possui um cocho de alimentação em uma das laterais e há visibilidade para uma área externa/pasto ao fundo.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Bezerro",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio/ Deitado",
+      "descricao_animal": "Bezerro de pelagem preta uniforme, deitado confortavelmente sobre a palha no chão do curral."
+    },
+    {
+      "id": 2,
+      "classe": "Bezerro",
+      "sexo": "Macho",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Bezerro de pelagem caramelo/marrom claro com algumas marcações brancas, em pé e parcialmente visível no canto direito da imagem."
+    },
+    {
+      "id": 3,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Novilha de pelagem preta e branca (raça Holandesa), com a cabeça abaixada dentro do cocho, se alimentando. Possui um brinco auricular amarelo na orelha esquerda."
+    },
+    {
+      "id": 4,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Novilha de pelagem preta e branca (raça Holandesa), em pé atrás da cerca azul, observando o ambiente."
+    },
+    {
+      "id": 5,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Novilha de pelagem preta e branca, parcialmente visível ao fundo, atrás de outros animais."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 2,
+    "Novilha": 3,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 0,
+    "Touro": 0
   },
-  "total_animais": 4,
-  "observacoes": "Quatro bovinos visíveis em um curral. Duas vacas adultas (preto e branco) estão atrás de uma cerca de madeira azul. Dois bezerros jovens estão na parte frontal do curral, um deitado e outro parcialmente visível em pé à direita."
+  "observacoes_gerais": "Os animais presentes no curral parecem saudáveis e bem cuidados, com boa condição corporal. O ambiente é limpo e organizado, com alimento disponível no cocho. As cercas azuis conferem uma estética agradável e funcional ao local de manejo."
 }

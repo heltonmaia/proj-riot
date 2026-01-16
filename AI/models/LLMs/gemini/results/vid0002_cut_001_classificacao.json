@@ -1,1 +1,46 @@
-{"contagem": {"bezerro": 1, "vaca": 2, "touro": 0}, "total_animais": 3, "observacoes": "A cena mostra um curral com um bezerro marrom em primeiro plano e duas vacas adultas (uma preta e uma preta e branca) ao fundo, atrás da cerca azul."}
+{
+  "descricao_ambiente": "Curral de contenção com cerca de madeira pintada de azul, piso de terra batida com vestígios de matéria orgânica seca (feno/palha) e algumas áreas úmidas ou com lama/esterco. O ambiente parece ser ao ar livre sob luz solar direta.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Bezerro",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Em pé, defecando",
+      "descricao_animal": "Bezerro de pelagem marrom claro com manchas brancas nas patas traseiras e na ponta da cauda. Está de costas para o observador, em pé no centro da imagem e parece estar no processo de defecar ou ter acabado de fazê-lo."
+    },
+    {
+      "id": 2,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Bovino jovem de pelagem preta sólida, visível atrás da cerca azul no lado esquerdo da imagem, olhando para frente. A maior parte do seu corpo está oculta pela cerca."
+    },
+    {
+      "id": 3,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Vaca de pelagem preta e branca (provavelmente da raça Holandesa), parcialmente visível no canto esquerdo da imagem. Apenas parte da cabeça e corpo são visíveis à esquerda da cerca."
+    },
+    {
+      "id": 4,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Vaca de pelagem preta e branca, parcialmente visível ao fundo no canto esquerdo, atrás da cerca e do outro animal preto. Apenas uma porção do corpo e parte da cabeça são visíveis."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 1,
+    "Novilha": 1,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 2,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A cena mostra um pequeno grupo de bovinos em um curral sob céu parcialmente nublado. Todos os animais parecem saudáveis e em estado de repouso ou atividade fisiológica normal. O bezerro em primeiro plano é o foco principal da imagem."
+}
