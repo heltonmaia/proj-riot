@@ -1,0 +1,22 @@
+{
+  "descricao_ambiente": "Pasto com vegetação mista de grama verde e seca, indicando uma área de pastejo ao ar livre. Ao fundo, é possível observar outras estruturas rurais e mais animais.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Magro",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Novilha de pelagem preta uniforme, apresentando condição corporal magra com costelas e anca visivelmente proeminentes. Está utilizando um cabresto de corda branca no focinho e na nuca, com a cabeça baixa, pastando."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 1,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 0,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A imagem principal foca em uma novilha. Em segundo plano, há outros bovinos de pelagem escura e um de pelagem mais clara/marrom pastando, mas a visibilidade é limitada e não permite uma análise detalhada de seus sinais clínicos, sexo ou comportamento específico."
+}

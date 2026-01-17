@@ -1,0 +1,30 @@
+{
+  "descricao_ambiente": "Curral coberto com piso de terra e lama/água acumulada, indicando um ambiente úmido. Paredes de alvenaria e um detalhe de janela com cobogós decorativos. Há um cocho de alimentação de concreto em primeiro plano.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Vaca de pelagem predominantemente preta, com úbere visível, branco com manchas pretas. Possui brincos de identificação (um amarelo e um claro) na orelha esquerda. Apresenta boa condição corporal e está com a cabeça abaixada no cocho, consumindo alimento."
+    },
+    {
+      "id": 2,
+      "classe": "Bezerro",
+      "sexo": "Macho",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Animal jovem, parcialmente visível atrás da vaca, com pelagem branca nas pernas traseiras. As pernas são relativamente finas, sugerindo ser um bezerro. Está em pé e parece estar em repouso."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 1,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 1,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A cena mostra uma vaca se alimentando enquanto um bezerro permanece em pé próximo a ela. O ambiente do curral apresenta condições de higiene questionáveis devido ao piso enlameado e úmido."
+}

@@ -1,0 +1,70 @@
+{
+  "descricao_ambiente": "Curral com cercas de madeira pintadas de azul, apresentando terreno lamacento com resquícios de palha. Ao fundo, vislumbram-se árvores, uma estrutura com telhado de terracota e uma tela de sombreamento preta, indicando um ambiente semiaberto de manejo de animais. O clima parece nublado.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Bezerro",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Bezerro com pelagem branca predominantemente, com grandes manchas pretas irregulares e malhadas. A cabeça é branca com áreas pretas ao redor dos olhos e orelhas. As pernas são brancas, mas sujas de lama."
+    },
+    {
+      "id": 2,
+      "classe": "Bezerro",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Bezerro com pelagem marrom avermelhada e grandes manchas brancas irregulares, visíveis nas pernas traseiras e parte inferior do corpo. Está com as pernas sujas de lama."
+    },
+    {
+      "id": 3,
+      "classe": "Bezerro",
+      "sexo": "Macho",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Bezerro com pelagem escura, quase preta, com pequenas áreas brancas nas extremidades, estando com as pernas sujas de lama. Posição traseira visível."
+    },
+    {
+      "id": 4,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Novilha com pelagem preta e branca, possivelmente um padrão Holandês, parcialmente obscurecida pela cerca azul na parte esquerda da imagem. Apenas a parte superior do corpo é visível."
+    },
+    {
+      "id": 5,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Novilha com pelagem preta, apresentando uma mancha branca na testa e uma marca de orelha amarela. Parcialmente visível atrás da cerca azul, no centro da imagem."
+    },
+    {
+      "id": 6,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Novilha com pelagem preta e branca, apenas a parte superior do corpo é visível atrás da cerca azul, à direita do animal 5."
+    },
+    {
+      "id": 7,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Novilha com pelagem escura, com manchas brancas nas pernas e na base da cauda. Visível na extrema direita da imagem, de costas para a câmera."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 3,
+    "Novilha": 4,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 0,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A cena mostra um grupo de bezerros e novilhas jovens em um curral de manejo. Os animais parecem saudáveis e estão em um estado de ócio em pé. O ambiente é lamacento, sugerindo condições úmidas ou recente limpeza. Há estruturas de contenção e sombreamento no local."
+}

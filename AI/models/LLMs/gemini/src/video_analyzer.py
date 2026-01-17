@@ -1,4 +1,3 @@
-
 import os
 import google.generativeai as genai
 import cv2
@@ -148,8 +147,9 @@ class VideoAnalyzer:
         # Usar prompt específico ou o padrão da instância
         prompt = prompt_template or self.prompt_template
         
-        max_retries = 3
-        retry_delay = 5  # segundos
+        max_retries = 6
+        # Delays específicos: 1min (60s), 15min (900s), 30min (1800s). Depois dobra.
+        retry_delays = [60, 900, 1800]
         
         for attempt in range(max_retries):
             try:
@@ -166,6 +166,19 @@ class VideoAnalyzer:
                     base_name = os.path.splitext(os.path.basename(video_path))[0]
                     output_path = f"{base_name}_classificacao.json"
                 
+                # Salvar o frame analisado (imagem)
+                try:
+                    # Derivar nome da imagem do nome do json
+                    image_path = output_path.replace('.json', '.jpg')
+                    # Se não terminar com .json (caso raro), forçar extensão
+                    if image_path == output_path:
+                        image_path = output_path + '.jpg'
+                        
+                    frames[0].save(image_path)
+                    print(f"Frame salvo em: {image_path}")
+                except Exception as e:
+                    print(f"Erro ao salvar frame: {e}")
+                
                 # Salvar arquivo JSON
                 with open(output_path, 'w', encoding='utf-8') as f:
                     f.write(json_content)
@@ -174,13 +187,34 @@ class VideoAnalyzer:
                 return output_path
                 
             except Exception as e:
-                if "429" in str(e) or "Resource has been exhausted" in str(e):
-                    print(f"Cota de API excedida (429). Tentativa {attempt + 1}/{max_retries}. Aguardando {retry_delay}s...")
-                    time.sleep(retry_delay)
-                    retry_delay *= 2  # Backoff exponencial
+                is_rate_limit = "429" in str(e) or "Resource has been exhausted" in str(e)
+                if is_rate_limit and attempt < max_retries - 1:
+                    # Calcular delay baseado na tentativa
+                    if attempt < len(retry_delays):
+                        delay = retry_delays[attempt]
+                    else:
+                        # Dobrar o último delay se passar da lista pré-definida
+                        # O último da lista é 1800, então: 3600, 7200...
+                        delay = retry_delays[-1] * (2 ** (attempt - len(retry_delays) + 1))
+                    
+                    print(f"Cota de API excedida (429). Tentativa {attempt + 1}/{max_retries} falhou.")
+                    print(f"Aguardando {delay} segundos (aprox. {delay/60:.1f} minutos) antes da próxima tentativa...")
+                    
+                    # Mostrar contagem regressiva para esperas longas (> 1 min)
+                    if delay > 60:
+                        remaining = delay
+                        while remaining > 0:
+                            if remaining % 60 == 0:
+                                print(f"Aguardando... {remaining/60:.0f} minutos restantes.")
+                            time.sleep(1)
+                            remaining -= 1
+                    else:
+                        time.sleep(delay)
                 else:
-                    print(f"Erro ao classificar animais: {e}")
+                    if is_rate_limit:
+                         print(f"Cota de API excedida. Máximo de tentativas ({max_retries}) atingido.")
+                    else:
+                        print(f"Erro ao classificar animais: {e}")
                     return None
         
-        print("Falha após múltiplas tentativas devido a erros de cota.")
         return None 

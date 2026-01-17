@@ -1,0 +1,28 @@
+{
+  "descricao_ambiente": "Curral com piso de terra batida, misturado com pequenas pedras e restos de tijolos, adjacente a uma área de pasto verde delimitada por uma cerca de madeira pintada de azul. Ao fundo, vegetação exuberante, um tanque azul e uma estrutura de construção. Um homem está em pé atrás da vaca adulta.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Amamentando",
+      "descricao_animal": "Vaca adulta de pelagem preta uniforme, curta e brilhante. Possui uma argola de identificação amarela na orelha esquerda. Apresenta bom escore corporal e está em pé, permitindo que o bezerro mame."
+    },
+    {
+      "id": 2,
+      "classe": "Bezerro",
+      "sexo": "Macho",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "O bezerro está mamando na vaca",
+      "descricao_animal": "Bezerro jovem de pelagem preta e branca, com manchas brancas proeminentes nas pernas, abdômen e focinho. Possui bom desenvolvimento físico para a idade e está ativamente mamando na vaca."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 1,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Touro": 0
+  }
+}

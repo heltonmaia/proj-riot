@@ -1,0 +1,30 @@
+{
+  "descricao_ambiente": "Estábulo com paredes revestidas de azulejos claros e piso de tijolos, que apresenta sinais de umidade e sujeira. Há um cocho ou área de bebedouro ao fundo e uma mangueira no chão. Parte da estrutura é aberta para o exterior, onde se veem árvores e vegetação.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Vaca adulta de pelagem preta uniforme, porte grande, com úbere visivelmente desenvolvido, permitindo a amamentação do bezerro. Sua cauda está levemente levantada e curvada."
+    },
+    {
+      "id": 2,
+      "classe": "Bezerro",
+      "sexo": "Macho",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "O bezerro está mamando na vaca",
+      "descricao_animal": "Bezerro de pelagem marrom escura, com manchas brancas nas pernas e na ponta da cauda. Está ativamente mamando na vaca, posicionando-se sob o úbere."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 1,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 1,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A cena mostra uma interação de amamentação entre uma vaca e seu bezerro dentro de um ambiente que parece ser uma área de manejo ou alojamento em um estábulo, com piso que necessita de limpeza. Ambos os animais aparentam boa saúde."
+}

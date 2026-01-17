@@ -50,8 +50,6 @@ classification: |
       "Novilha": 0,
       "Novilho": 0,
       "Garrote": 0,
-      "Vaca": 0,
       "Touro": 0
-    },
-    "observacoes_gerais": "Comentários sobre a cena geral"
+    }
   }

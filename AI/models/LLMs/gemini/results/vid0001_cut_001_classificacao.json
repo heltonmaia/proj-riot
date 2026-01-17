@@ -1,54 +1,46 @@
 {
-  "descricao_ambiente": "Curral com piso de terra batida e palha/feno, cercado por estruturas de madeira pintadas de azul. Possui um cocho de alimentação em uma das laterais e há visibilidade para uma área externa/pasto ao fundo.",
+  "descricao_ambiente": "Curral com chão de terra batida e forragem seca (palha/feno), delimitado por cercas de madeira pintadas de azul. Há um cocho de alimentação à esquerda e, ao fundo, um pasto aberto ou área de manejo.",
   "animais_identificados": [
     {
       "id": 1,
-      "classe": "Bezerro",
-      "sexo": "Fêmea",
-      "sinais_clinicos": "Saudável",
-      "comportamento": "Ócio/ Deitado",
-      "descricao_animal": "Bezerro de pelagem preta uniforme, deitado confortavelmente sobre a palha no chão do curral."
-    },
-    {
-      "id": 2,
-      "classe": "Bezerro",
-      "sexo": "Macho",
-      "sinais_clinicos": "Saudável",
-      "comportamento": "Ócio em pé (estação)",
-      "descricao_animal": "Bezerro de pelagem caramelo/marrom claro com algumas marcações brancas, em pé e parcialmente visível no canto direito da imagem."
-    },
-    {
-      "id": 3,
       "classe": "Novilha",
       "sexo": "Fêmea",
       "sinais_clinicos": "Saudável",
       "comportamento": "Se alimentando",
-      "descricao_animal": "Novilha de pelagem preta e branca (raça Holandesa), com a cabeça abaixada dentro do cocho, se alimentando. Possui um brinco auricular amarelo na orelha esquerda."
+      "descricao_animal": "Animal jovem de pelagem preta e branca (raça Holandesa), com identificação amarela na orelha esquerda, com a cabeça baixa dentro do cocho de alimentação, consumindo forragem."
+    },
+    {
+      "id": 2,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Animal adulto de pelagem preta e branca (raça Holandesa), apenas as pernas e parte inferior do corpo visíveis, em pé atrás da cerca azul no centro da imagem."
+    },
+    {
+      "id": 3,
+      "classe": "Bezerro",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio/ Deitado",
+      "descricao_animal": "Bezerro de pelagem preta uniforme, deitado no chão do curral sobre a forragem seca, aparentando estar em repouso."
     },
     {
       "id": 4,
-      "classe": "Novilha",
-      "sexo": "Fêmea",
+      "classe": "Bezerro",
+      "sexo": "Macho",
       "sinais_clinicos": "Saudável",
       "comportamento": "Ócio em pé (estação)",
-      "descricao_animal": "Novilha de pelagem preta e branca (raça Holandesa), em pé atrás da cerca azul, observando o ambiente."
-    },
-    {
-      "id": 5,
-      "classe": "Novilha",
-      "sexo": "Fêmea",
-      "sinais_clinicos": "Saudável",
-      "comportamento": "Ócio em pé (estação)",
-      "descricao_animal": "Novilha de pelagem preta e branca, parcialmente visível ao fundo, atrás de outros animais."
+      "descricao_animal": "Bezerro de pelagem marrom-clara/caramelo, com parte do corpo visível à direita da imagem, em pé e observando."
     }
   ],
   "contagem_total": {
     "Bezerro": 2,
-    "Novilha": 3,
+    "Novilha": 1,
     "Novilho": 0,
     "Garrote": 0,
-    "Vaca": 0,
+    "Vaca": 1,
     "Touro": 0
   },
-  "observacoes_gerais": "Os animais presentes no curral parecem saudáveis e bem cuidados, com boa condição corporal. O ambiente é limpo e organizado, com alimento disponível no cocho. As cercas azuis conferem uma estética agradável e funcional ao local de manejo."
+  "observacoes_gerais": "A cena mostra um grupo de animais de diferentes idades (bezerros, novilha e vaca) confinados em um curral com acesso a alimentação, indicando um ambiente de criação ou manejo. Os animais parecem saudáveis e calmos."
 }

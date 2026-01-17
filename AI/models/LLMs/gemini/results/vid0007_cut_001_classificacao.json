@@ -1,0 +1,30 @@
+{
+  "descricao_ambiente": "Pasto verde com vegetação mista, cercado por estacas de madeira. Ao fundo, um edifício branco com telhado de metal envelhecido e árvores densas.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Novilho",
+      "sexo": "Macho",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Novilho de pelagem escura, quase preta, com cauda longa. Apresenta bom estado corporal, cabeça baixa forrageando."
+    },
+    {
+      "id": 2,
+      "classe": "Novilho",
+      "sexo": "Macho",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Novilho de pelagem escura, quase preta, de porte similar ao animal 1. Tem a cabeça baixa, aparentemente se alimentando, e uma marca ou brinco na orelha direita."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 0,
+    "Novilho": 2,
+    "Garrote": 0,
+    "Vaca": 0,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A cena mostra dois novilhos em um ambiente de pastagem sob céu nublado, indicando um dia sem sol direto. Os animais parecem calmos e saudáveis."
+}

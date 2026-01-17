@@ -1,0 +1,30 @@
+{
+  "descricao_ambiente": "Sala de ordenha com piso de concreto, paredes parcialmente azulejadas em branco e estrutura metálica para contenção dos animais e suporte dos equipamentos de ordenha. Há equipamentos de ordenha mecânica visíveis ao fundo, bem como recipientes plásticos.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Magro",
+      "comportamento": "Vaca aguardando ordenha",
+      "descricao_animal": "Bovino adulto de pelagem preta, com costelas, coluna vertebral e proeminências ósseas da garupa visíveis, indicando baixa condição corporal. Usa um cabresto simples na cabeça e está contida entre barras metálicas de uma baia de ordenha."
+    },
+    {
+      "id": 2,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Vaca sendo ordenhada mecanicamente",
+      "descricao_animal": "Bovino adulto de pelagem escura, parcialmente visível ao fundo, atrás do primeiro animal e da estrutura de ordenha. Equipamentos de ordenha mecânica estão acoplados ou muito próximos à sua região do úbere, indicando que está sendo ordenhada."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 2,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A cena mostra duas vacas em uma sala de ordenha. A vaca em primeiro plano apresenta condição corporal magra, enquanto a vaca ao fundo está sendo ordenhada. O ambiente é típico de uma instalação de produção de leite."
+}

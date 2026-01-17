@@ -1,21 +1,21 @@
 {
-  "descricao_ambiente": "Curral de contenção com cerca de madeira pintada de azul, piso de terra batida com vestígios de matéria orgânica seca (feno/palha) e algumas áreas úmidas ou com lama/esterco. O ambiente parece ser ao ar livre sob luz solar direta.",
+  "descricao_ambiente": "Curral com chão de terra e resíduos de feno/palha, cercado por uma cerca de madeira pintada de azul. Há vegetação e árvores ao fundo, sob um céu parcialmente nublado, indicando um ambiente externo de manejo animal.",
   "animais_identificados": [
     {
       "id": 1,
       "classe": "Bezerro",
-      "sexo": "Fêmea",
+      "sexo": "Macho",
       "sinais_clinicos": "Saudável",
-      "comportamento": "Em pé, defecando",
-      "descricao_animal": "Bezerro de pelagem marrom claro com manchas brancas nas patas traseiras e na ponta da cauda. Está de costas para o observador, em pé no centro da imagem e parece estar no processo de defecar ou ter acabado de fazê-lo."
+      "comportamento": "Andando",
+      "descricao_animal": "Bezerro de pelagem marrom-avermelhada com manchas brancas nas patas e uma listra branca distintiva no flanco direito e na cauda elevada. O animal parece estar em movimento no centro do curral."
     },
     {
       "id": 2,
-      "classe": "Novilha",
+      "classe": "Vaca",
       "sexo": "Fêmea",
       "sinais_clinicos": "Saudável",
       "comportamento": "Ócio em pé (estação)",
-      "descricao_animal": "Bovino jovem de pelagem preta sólida, visível atrás da cerca azul no lado esquerdo da imagem, olhando para frente. A maior parte do seu corpo está oculta pela cerca."
+      "descricao_animal": "Vaca de pelagem preta, com a cabeça e parte do corpo visíveis por trás da cerca azul, observando o ambiente."
     },
     {
       "id": 3,
@@ -23,7 +23,7 @@
       "sexo": "Fêmea",
       "sinais_clinicos": "Saudável",
       "comportamento": "Ócio em pé (estação)",
-      "descricao_animal": "Vaca de pelagem preta e branca (provavelmente da raça Holandesa), parcialmente visível no canto esquerdo da imagem. Apenas parte da cabeça e corpo são visíveis à esquerda da cerca."
+      "descricao_animal": "Vaca de pelagem preta e branca, parcialmente visível no canto esquerdo da imagem, atrás da cerca."
     },
     {
       "id": 4,
@@ -31,16 +31,16 @@
       "sexo": "Fêmea",
       "sinais_clinicos": "Saudável",
       "comportamento": "Ócio em pé (estação)",
-      "descricao_animal": "Vaca de pelagem preta e branca, parcialmente visível ao fundo no canto esquerdo, atrás da cerca e do outro animal preto. Apenas uma porção do corpo e parte da cabeça são visíveis."
+      "descricao_animal": "Vaca de pelagem preta e branca, bastante obscurecida e distante no fundo esquerdo da imagem, atrás de outros animais e da cerca."
     }
   ],
   "contagem_total": {
     "Bezerro": 1,
-    "Novilha": 1,
+    "Novilha": 0,
     "Novilho": 0,
     "Garrote": 0,
-    "Vaca": 2,
+    "Vaca": 3,
     "Touro": 0
   },
-  "observacoes_gerais": "A cena mostra um pequeno grupo de bovinos em um curral sob céu parcialmente nublado. Todos os animais parecem saudáveis e em estado de repouso ou atividade fisiológica normal. O bezerro em primeiro plano é o foco principal da imagem."
+  "observacoes_gerais": "A cena retrata um grupo de bovinos em um curral, com um bezerro em destaque e vacas adultas ao fundo, indicando um ambiente de criação ou manejo. Todos os animais parecem saudáveis e em estado de repouso ou movimentação tranquila."
 }

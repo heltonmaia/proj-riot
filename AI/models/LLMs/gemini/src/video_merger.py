@@ -8,62 +8,7 @@ class VideoMerger:
         """Inicializa o mesclador de vídeos."""
         pass
     
-    def merge_videos_with_subtitles(self, video_dir, output_path, subtitle_dir=None):
-        """
-        Mescla vídeos com legendas usando FFmpeg.
-        
-        Args:
-            video_dir: Diretório contendo os vídeos
-            output_path: Caminho para o vídeo de saída
-            subtitle_dir: Diretório contendo as legendas (opcional)
-        """
-        try:
-            # Encontrar todos os vídeos no diretório
-            video_files = []
-            for ext in ['*.mp4', '*.avi', '*.mov', '*.mkv']:
-                video_files.extend(glob.glob(os.path.join(video_dir, ext)))
-            
-            if not video_files:
-                print(f"Nenhum vídeo encontrado em {video_dir}")
-                return False
-            
-            video_files.sort()  # Ordenar para garantir ordem consistente
-            print(f"Vídeos encontrados: {len(video_files)}")
-            
-            # Criar lista de arquivos para FFmpeg
-            file_list_path = "temp_file_list.txt"
-            with open(file_list_path, 'w', encoding='utf-8') as f:
-                for video_file in video_files:
-                    f.write(f"file '{os.path.abspath(video_file)}'\n")
-            
-            # Comando FFmpeg para mesclar vídeos
-            cmd = [
-                'ffmpeg',
-                '-f', 'concat',
-                '-safe', '0',
-                '-i', file_list_path,
-                '-c', 'copy',
-                output_path,
-                '-y'  # Sobrescrever arquivo de saída se existir
-            ]
-            
-            print("Mesclando vídeos...")
-            result = subprocess.run(cmd, capture_output=True, text=True)
-            
-            # Limpar arquivo temporário
-            if os.path.exists(file_list_path):
-                os.remove(file_list_path)
-            
-            if result.returncode == 0:
-                print(f"Vídeos mesclados com sucesso: {output_path}")
-                return True
-            else:
-                print(f"Erro ao mesclar vídeos: {result.stderr}")
-                return False
-                
-        except Exception as e:
-            print(f"Erro durante a mesclagem: {e}")
-            return False
+
     
     def add_subtitles_to_video(self, video_path, subtitle_path, output_path):
         """

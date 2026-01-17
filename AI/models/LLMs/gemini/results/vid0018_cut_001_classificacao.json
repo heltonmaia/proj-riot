@@ -1,0 +1,54 @@
+{
+  "descricao_ambiente": "Curral com chão de terra batida e lama, cercado por estacas de madeira e arame. Há vegetação verde exuberante ao redor e uma estrutura de telhado (provavelmente um estábulo ou abrigo) no lado esquerdo da imagem. O céu está nublado.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Andando",
+      "descricao_animal": "Vaca de pelagem preta e branca (tipo Holstein-Friesian), com grandes manchas brancas na cabeça e pescoço, e partes brancas nas pernas e abdômen. Possui brinco de identificação na orelha direita."
+    },
+    {
+      "id": 2,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Andando",
+      "descricao_animal": "Vaca de pelagem predominantemente preta, com uma marca branca na testa. Está ligeiramente atrás e à direita do animal 1."
+    },
+    {
+      "id": 3,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Andando",
+      "descricao_animal": "Vaca de pelagem preta, com pequenas marcas brancas na cabeça e patas. Parece ter um brinco de identificação na orelha. Está na parte central da imagem, caminhando em direção ao observador."
+    },
+    {
+      "id": 4,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Andando",
+      "descricao_animal": "Vaca de pelagem preta, com uma marca branca na testa e algumas manchas brancas nas pernas. Possui brinco de identificação na orelha esquerda. Está um pouco mais à direita do animal 3."
+    },
+    {
+      "id": 5,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Andando",
+      "descricao_animal": "Vaca de pelagem marrom clara ou caramelo, sem manchas aparentes. Está no lado direito da imagem, um pouco mais afastada dos demais animais de cor preta."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 9,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A cena mostra um grupo de vacas, predominantemente de pelagem preta ou preta e branca, em um curral lamacento. Há uma vaca de cor marrom clara entre elas. Ao fundo, mais animais são visíveis, indicando um rebanho maior. Os animais parecem estar em movimento ou aguardando. O ambiente é rural, com estruturas de manejo e torres de energia ao longe."
+}

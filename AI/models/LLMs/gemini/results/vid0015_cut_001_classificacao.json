@@ -1,0 +1,22 @@
+{
+  "descricao_ambiente": "Pasto verde com grama alta e densa, em um ambiente externo com árvores e postes de energia no fundo, sob um céu parcialmente nublado.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Bovino de pelagem malhada preta e branca (padrão Holstein), com o corpo predominantemente preto, apresentando manchas brancas no dorso, abdômen e parte inferior das pernas. A vaca está em pé, com a cabeça abaixada, forrageando ativamente na grama alta."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 1,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A cena mostra uma única vaca pastando em um campo com vegetação exuberante. O animal parece tranquilo e em bom estado de saúde, focado na alimentação. A iluminação indica um dia claro."
+}

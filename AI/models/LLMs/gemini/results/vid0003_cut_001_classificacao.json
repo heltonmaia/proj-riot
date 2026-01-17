@@ -1,0 +1,30 @@
+{
+  "descricao_ambiente": "Curral com chão de terra batida e tijolos aparentes, com uma estrutura de cerca azul e vegetação verde ao fundo, próximo a uma parede ou edifício de cor clara.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "O bezerro está mamando na vaca",
+      "descricao_animal": "Vaca de pelagem preta uniforme, de grande porte, com o úbere visível e em bom estado. Possui brincos de identificação amarelos nas orelhas. Sua cauda é longa com um tufo de pelos pretos na ponta."
+    },
+    {
+      "id": 2,
+      "classe": "Bezerro",
+      "sexo": "Macho",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "O bezerro está mamando na vaca",
+      "descricao_animal": "Bezerro jovem de pelagem preta com manchas brancas irregulares, visíveis na testa, focinho, barriga e nas patas. Está em pé, mamando ativamente no úbere da vaca."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 1,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 1,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A imagem retrata uma interação maternal de amamentação entre uma vaca e seu bezerro em um ambiente que aparenta ser uma área de manejo ou curral. Ambos os animais parecem saudáveis e a cena é tranquila, mostrando um comportamento natural."
+}

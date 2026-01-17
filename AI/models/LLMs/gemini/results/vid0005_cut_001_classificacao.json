@@ -1,0 +1,46 @@
+{
+  "descricao_ambiente": "Curral com estrutura de madeira pintada de azul, piso de terra batida coberto por lama e matéria orgânica (fezes/restos de alimento), presença de cocho com feno ou capim seco. Há uma cobertura parcial sobre a área.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Novilha de pelagem preta e branca, com maior predominância de preto no corpo e branco nas pernas e abdômen. Está com a cabeça abaixada no cocho, se alimentando."
+    },
+    {
+      "id": 2,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Novilha de pelagem predominantemente branca com manchas pretas, visível parcialmente atrás do animal 1. Está em pé, aparentemente em ócio."
+    },
+    {
+      "id": 3,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Novilha de pelagem marrom-avermelhada com grandes manchas brancas irregulares e pernas brancas. Está em pé na parte central-direita da imagem."
+    },
+    {
+      "id": 4,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Novilha de pelagem preta e branca, com a cabeça visível no canto direito. Apresenta padrão de pelagem Holstein na face, com uma mancha branca na testa."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 4,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 0,
+    "Touro": 0
+  },
+  "observacoes_gerais": "O ambiente do curral apresenta condições de higiene precárias devido ao acúmulo de lama e fezes no piso, o que pode favorecer o surgimento de doenças. No entanto, os animais observados aparentemente estão saudáveis e se alimentando ou em ócio, sem sinais clínicos visíveis de doença. Todos os animais identificados são jovens, compatíveis com a categoria Novilhas."
+}

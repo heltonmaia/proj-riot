@@ -8,6 +8,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from src.config_manager import ConfigManager
 from src.video_analyzer import VideoAnalyzer
 from src.video_merger import VideoMerger
+from src.report_generator import ReportGenerator
 import time
 
 class Menu:
@@ -16,6 +17,7 @@ class Menu:
         self.config_manager = ConfigManager()
         self.video_analyzer = None
         self.video_merger = VideoMerger()
+        self.report_generator = ReportGenerator(self.config_manager.get('output_dir', 'results'))
         
         # Inicializar analisador se API key estiver configurada
         api_key = self.config_manager.get('api_key')
@@ -23,6 +25,41 @@ class Menu:
             model_name = self.config_manager.get('model', 'gemini-3-pro-preview')
             prompt = self.config_manager.get_prompt('video_analysis')
             self.video_analyzer = VideoAnalyzer(api_key, model_name, prompt)
+
+    # ... (existing methods ... skip to classify_animals)
+
+    def classify_animals(self):
+        """Menu de classificação de animais."""
+        while True:
+            print("\n" + "-"*40)
+            print("   CLASSIFICAÇÃO DE ANIMAIS (JSON)")
+            print("-"*40)
+            print("1. Analisar vídeo individual")
+            print("2. Analisar todos os vídeos da pasta")
+            print("3. Gerar Relatório Excel (de todos JSONs)")
+            print("0. Voltar ao menu principal")
+            print("-"*40)
+            
+            choice = input("\nEscolha uma opção (0-3): ").strip()
+            
+            if choice == '1':
+                self._classify_single_video()
+            elif choice == '2':
+                self._classify_directory_videos()
+            elif choice == '3':
+                self._generate_excel_report()
+            elif choice == '0':
+                break
+            else:
+                print("Opção inválida.")
+
+    def _generate_excel_report(self):
+        """Gera relatório Excel a partir dos JSONs existentes."""
+        print("\n=== Gerando Relatório Excel ===")
+        # Atualizar diretório caso tenha mudado na config
+        self.report_generator.results_dir = self.config_manager.get('output_dir', 'results')
+        self.report_generator.generate_excel_report()
+
     
     def show_main_menu(self):
         """Exibe o menu principal."""
@@ -31,34 +68,22 @@ class Menu:
             print("           RIOT GEMINI - MENU PRINCIPAL")
             print("="*50)
             print("1. Configurar API Key")
-            print("2. Analisar vídeo individual (gera a legenda)")
-            print("3. Analisar todos os vídeos de um diretório (gera as legendas)")
-            print("4. Adicionar legendas aos vídeos (todos do diretório)")
-            print("5. Processar vídeos em lote (análise + legendas, gera os vídeos resultantes)")
-            print("6. Mesclar vídeos em apenas um para análises futuras")
-            print("7. Sair")
-            print("8. Classificação dos Animais (JSON)")
+            print("2. Gerar Legendas (Submenu)")
+            print("3. Classificação dos Animais (JSON)")
+            print("4. Sair")
             print("="*50)
             
-            choice = input("\nEscolha uma opção (1-8): ").strip()
+            choice = input("\nEscolha uma opção (1-4): ").strip()
             
             if choice == '1':
                 self.configure_api_key()
             elif choice == '2':
-                self.analyze_single_video()
+                self.generate_subtitles_menu()
             elif choice == '3':
-                self.analyze_directory_videos()
+                self.classify_animals()
             elif choice == '4':
-                self.add_subtitles_to_videos()
-            elif choice == '5':
-                self.batch_process_videos()
-            elif choice == '6':
-                self.merge_videos()
-            elif choice == '7':
                 print("Saindo...")
                 break
-            elif choice == '8':
-                self.classify_animals()
             else:
                 print("Opção inválida. Tente novamente.")
     
@@ -197,28 +222,33 @@ class Menu:
         
         print(f"\nProcessamento concluído: {success_count}/{len(video_files)} vídeos analisados com sucesso.")
     
-    def merge_videos(self):
-        """
-        Junta todos os vídeos do diretório em um único arquivo para facilitar análises posteriores.
-        """
-        print("\n=== Mesclar Vídeos ===")
-        video_dir = input(f"Diretório de vídeos (Enter para {self.config_manager.get('video_dir')}): ").strip()
-        if not video_dir:
-            video_dir = self.config_manager.get('video_dir')
-        
-        if not os.path.exists(video_dir):
-            print("Erro: Diretório não encontrado.")
-            return
-        
-        output_path = input("Caminho do vídeo de saída (Enter para 'resultado_mesclado.mp4'): ").strip()
-        if not output_path:
-            output_path = "resultado_mesclado.mp4"
-        
-        print("Mesclando vídeos...")
-        if self.video_merger.merge_videos_with_subtitles(video_dir, output_path):
-            print("Mesclagem concluída com sucesso!")
-        else:
-            print("Erro durante a mesclagem.")
+    def generate_subtitles_menu(self):
+        """Exibe o submenu de geração de legendas."""
+        while True:
+            print("\n" + "="*50)
+            print("           GERAR LEGENDAS - SUBMENU")
+            print("="*50)
+            print("1. Analisar vídeo individual (gera a legenda)")
+            print("2. Analisar todos os vídeos de um diretório (gera as legendas)")
+            print("3. Adicionar legendas aos vídeos (todos do diretório)")
+            print("4. Processar vídeos em lote (análise + legendas, gera os vídeos resultantes)")
+            print("0. Voltar ao menu principal")
+            print("="*50)
+            
+            choice = input("\nEscolha uma opção (0-4): ").strip()
+            
+            if choice == '1':
+                self.analyze_single_video()
+            elif choice == '2':
+                self.analyze_directory_videos()
+            elif choice == '3':
+                self.add_subtitles_to_videos()
+            elif choice == '4':
+                self.batch_process_videos()
+            elif choice == '0':
+                break
+            else:
+                print("Opção inválida. Tente novamente.")
     
     def add_subtitles_to_videos(self):
         """
@@ -308,27 +338,7 @@ class Menu:
         
         print(f"\nProcessamento em lote concluído: {success_count}/{len(video_files)} vídeos processados com sucesso.")
     
-    def classify_animals(self):
-        """Menu de classificação de animais."""
-        while True:
-            print("\n" + "-"*40)
-            print("   CLASSIFICAÇÃO DE ANIMAIS (JSON)")
-            print("-"*40)
-            print("1. Analisar vídeo individual")
-            print("2. Analisar todos os vídeos da pasta")
-            print("0. Voltar ao menu principal")
-            print("-"*40)
-            
-            choice = input("\nEscolha uma opção (0-2): ").strip()
-            
-            if choice == '1':
-                self._classify_single_video()
-            elif choice == '2':
-                self._classify_directory_videos()
-            elif choice == '0':
-                break
-            else:
-                print("Opção inválida.")
+
 
     def _classify_single_video(self):
         """Classifica animais em um vídeo individual."""

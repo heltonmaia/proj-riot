@@ -1,0 +1,21 @@
+{"descricao_ambiente": "Pasto verde com vegetação rasteira densa, indicando boa forragem. Há árvores de diversos portes ao fundo, com um céu predominantemente nublado. Uma cerca rústica de madeira é visível em segundo plano. Um cocho ou bebedouro de cor azul está posicionado sob uma das árvores maiores.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Animal de pelagem escura, quase preta, de porte adulto, com a cabeça baixa dentro de um cocho/bebedouro azul, indicando que está se alimentando ou bebendo água."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 1,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A imagem retrata um ambiente de pastagem rural, com um animal se alimentando em um cocho. O pasto parece bem cuidado e há provisão de alimento/água para o gado. Outras pequenas formas brancas no fundo não são claramente identificáveis como bovinos para inclusão."
+}

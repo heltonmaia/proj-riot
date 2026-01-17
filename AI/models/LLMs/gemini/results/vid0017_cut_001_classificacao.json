@@ -1,0 +1,22 @@
+{
+  "descricao_ambiente": "Estábulo com paredes azulejadas na parte inferior e alvenaria na superior, piso de concreto/cimento com resíduos orgânicos. Há uma grade de metal branca ao fundo à esquerda.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Bovino de pelagem preta lisa, possui uma argola/cordinha no focinho e pescoço (cabresto) e um brinco de identificação amarelo na orelha direita. Apresenta algumas manchas brancas/resíduos na região do pescoço e peito. Sua condição corporal aparenta ser razoável, com ossos da costela e anca levemente visíveis, mas sem sinais de emaciação severa. O úbere é visível, mas não distendido, compatível com uma novilha ou vaca jovem não lactante em pico."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 1,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 0,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A imagem mostra um único animal em um ambiente interno, que parece ser uma baia ou área de manejo. O animal está calmo e em repouso. O piso apresenta sujidade, mas o ambiente geral parece ser funcional."
+}

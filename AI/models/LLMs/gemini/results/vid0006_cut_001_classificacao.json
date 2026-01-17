@@ -1,0 +1,62 @@
+{
+  "descricao_ambiente": "Curral com estrutura de contenção em madeira/metal pintado de azul e piso de terra batida com bastante lama e água empoçada ao redor do cocho de alimentação, que contém forragem verde. Ao fundo, é possível ver uma área mais aberta, possivelmente um pasto.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Novilha de pelagem preta brilhante, com uma pequena marca branca na testa e um brinco auricular amarelo com o número '322'. Está com a cabeça no cocho, se alimentando ativamente."
+    },
+    {
+      "id": 2,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Novilha de pelagem preta com uma mancha branca proeminente na testa/frente da cabeça. Está posicionada à esquerda da Novilha 1, com a cabeça abaixada no cocho, se alimentando."
+    },
+    {
+      "id": 3,
+      "classe": "Novilha",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Novilha de pelagem preta com uma mancha branca na região dorsal, parcialmente visível atrás da Novilha 2. Sua cabeça está no cocho, sugerindo que está se alimentando."
+    },
+    {
+      "id": 4,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Vaca de pelagem preta com grandes manchas brancas irregulares visíveis no dorso e flanco, característica da raça Holandesa. Parece ser um animal adulto, posicionado mais ao fundo e à direita, com a cabeça no cocho."
+    },
+    {
+      "id": 5,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Se alimentando",
+      "descricao_animal": "Vaca de pelagem predominantemente branca com manchas pretas, apenas uma parte do corpo é visível atrás da Vaca 4. A cabeça está abaixada, indicando que está se alimentando no cocho."
+    },
+    {
+      "id": 6,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Vaca de pelagem preta, apenas a parte superior do dorso é visível em pé, aparentemente em uma área de pasto ou lote ao fundo, atrás da cerca."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 3,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 3,
+    "Touro": 0
+  },
+  "observacoes_generais": "A cena mostra um grupo de bovinos (novilhas e vacas) em um curral, a maioria se alimentando em um cocho com forragem verde. O ambiente do curral apresenta condições de umidade e lama consideráveis no piso, especialmente perto do cocho. Os animais aparentam bom estado de saúde geral e estão focados na alimentação. Um animal adicional é visível ao fundo, em uma área mais distante."
+}

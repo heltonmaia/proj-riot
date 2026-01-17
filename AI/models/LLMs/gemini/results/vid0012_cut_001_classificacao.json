@@ -1,0 +1,22 @@
+{
+  "descricao_ambiente": "A cena mostra um animal bovino em um curral ou área de manejo parcialmente coberta. O piso é de alvenaria ou tijolos, com algumas poças de água e umidade. Há uma grade de metal à esquerda do animal, que leva a uma área externa com cercas e estruturas de contenção azuis. Ao fundo, observa-se uma parede de alvenaria com aspecto rústico.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Ócio em pé (estação)",
+      "descricao_animal": "Vaca de pelagem malhada em preto e branco, com o dorso predominantemente preto e manchas brancas na barriga, pernas e flancos. Possui chifres pequenos e um úbere visivelmente desenvolvido. Apresenta boa condição corporal."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 1,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A imagem foca em um único animal adulto em uma área de manejo que parece estar em uso para contenção de gado. O ambiente possui estruturas para facilitar o manejo, como as grades e cercas visíveis. O animal está calmo e em repouso."
+}

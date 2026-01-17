@@ -1,0 +1,22 @@
+{
+  "descricao_ambiente": "Curral rústico de madeira com chão de terra batida e bastante lama, equipado com um bebedouro de concreto e um recipiente azul ao lado. Ao fundo, observa-se vegetação verde e um pasto cercado por arame farpado e madeiras.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Bebendo água em bebedouro",
+      "descricao_animal": "Vaca de pelagem predominantemente branca acinzentada com manchas escuras irregulares pelo corpo, com úbere visível. Possui marcas de lama nas pernas e abdômen."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 1,
+    "Touro": 0
+  },
+  "observacoes_gerais": "O animal presente no curral está em processo de hidratação. O ambiente do curral demonstra acúmulo de lama, o que pode indicar condições de umidade ou manejo."
+}

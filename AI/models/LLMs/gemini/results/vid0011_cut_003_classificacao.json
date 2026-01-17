@@ -1,0 +1,30 @@
+{
+  "descricao_ambiente": "Estábulo com piso de tijolos irregulares e paredes azulejadas em tom claro, parcialmente danificadas. Há uma estrutura tipo cocho ou bebedouro de concreto e azulejo também danificada à esquerda. Uma mangueira está no chão. O local parece ser parcialmente coberto, com entrada de luz natural e vegetação visível ao fundo.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "O bezerro está mamando na vaca",
+      "descricao_animal": "Vaca de pelagem preta ou marrom muito escura no dorso e flancos superiores, com a parte inferior do corpo e pernas em um tom marrom claro ou bege. Udre bem desenvolvido e visível. Está em pé."
+    },
+    {
+      "id": 2,
+      "classe": "Bezerro",
+      "sexo": "Macho",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "O bezerro está mamando na vaca",
+      "descricao_animal": "Bezerro de pelagem marrom-avermelhada. Possui manchas brancas nas pernas, abaixo dos joelhos/jarretes, e na região do focinho/testa. Está em pé, mamando ativamente na vaca."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 1,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Vaca": 1,
+    "Touro": 0
+  },
+  "observacoes_gerais": "A cena retrata um momento de amamentação entre uma vaca e seu bezerro em um ambiente que parece ser um estábulo ou área de manejo. O bezerro mostra vigor durante a mamada."
+}
