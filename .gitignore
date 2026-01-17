@@ -140,3 +140,6 @@ AI/dataset/*
 !AI/dataset/*.csv
 !AI/dataset/README.md
 !AI/dataset/.gitkeep
+
+# Gemini Results
+!AI/models/LLMs/gemini/results/*.jpg
