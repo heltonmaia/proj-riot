@@ -1,0 +1,28 @@
+{
+  "descricao_ambiente": "Sala de ordenha com piso de concreto úmido e com sujeira, cercas de metal, e sistema de ordenha mecânica visível. Há um operador ao fundo.",
+  "animais_identificados": [
+    {
+      "id": 1,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Vaca sendo ordenhada mecanicamente",
+      "descricao_animal": "Vaca de pelagem preta e branca com manchas irregulares. Possui um brinco de identificação amarelo na orelha direita e um cabresto branco. As pernas apresentam manchas brancas e os cascos são escuros. A glândula mamária (úbere) está conectada ao equipamento de ordenha mecânica. A condição corporal parece boa."
+    },
+    {
+      "id": 2,
+      "classe": "Vaca",
+      "sexo": "Fêmea",
+      "sinais_clinicos": "Saudável",
+      "comportamento": "Vaca aguardando ordenha",
+      "descricao_animal": "Vaca com pelagem predominantemente escura (preta), parcialmente visível atrás da vaca principal. A cabeça e parte do corpo são discerníveis. Parece estar aguardando no mesmo ambiente de ordenha."
+    }
+  ],
+  "contagem_total": {
+    "Bezerro": 0,
+    "Novilha": 0,
+    "Novilho": 0,
+    "Garrote": 0,
+    "Touro": 0
+  }
+}
